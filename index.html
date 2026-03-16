@@ -933,11 +933,19 @@ max-width:260px;
 			<div class="wedstrijden-blok">
   <h3>Aankomende thuiswedstrijden</h3>
   <ul class="wedstrijden-lijst">
-    <li><strong>Feyenoord - Excelsior</strong><br>Zondag 15 maart 2026, 14:30 uur</li>
-    <li><strong>Feyenoord - Ajax</strong><br>Zondag 22 maart 2026, 14:30 uur</li>
-    <li><strong>Feyenoord - FC Groningen</strong><br>Zaterdag 25 april 2026, 16:30 uur</li>
-    <li><strong>Feyenoord - AZ Alkmaar</strong><br>Zondag 10 mei 2026, tijdstip nog niet bevestigd</li>
-  </ul>
+  <li class="wedstrijd-item" data-date="2026-03-15">
+    <strong>Feyenoord - Excelsior</strong><br>Zondag 15 maart 2026, 14:30 uur
+  </li>
+  <li class="wedstrijd-item" data-date="2026-03-22">
+    <strong>Feyenoord - Ajax</strong><br>Zondag 22 maart 2026, 14:30 uur
+  </li>
+  <li class="wedstrijd-item" data-date="2026-04-25">
+    <strong>Feyenoord - FC Groningen</strong><br>Zaterdag 25 april 2026, 16:30 uur
+  </li>
+  <li class="wedstrijd-item" data-date="2026-05-10">
+    <strong>Feyenoord - AZ Alkmaar</strong><br>Zondag 10 mei 2026, tijdstip nog niet bevestigd
+  </li>
+</ul>
 </div>
 	
 
@@ -1087,6 +1095,20 @@ max-width:260px;
 
 
   </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const vandaag = new Date();
+  vandaag.setHours(0, 0, 0, 0);
 
+  document.querySelectorAll(".wedstrijd-item").forEach(function (item) {
+    const datum = item.getAttribute("data-date");
+    const wedstrijdDatum = new Date(datum + "T00:00:00");
+
+    if (wedstrijdDatum < vandaag) {
+      item.style.display = "none";
+    }
+  });
+});
+</script>
 </body>
 </html>
