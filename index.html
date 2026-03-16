@@ -606,12 +606,16 @@ max-width:260px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
+  cursor: pointer;
 }
-	  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .galerij-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-		.lightbox {
+}
+
+.lightbox {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -632,6 +636,7 @@ max-width:260px;
   height: auto;
   object-fit: contain;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .lightbox-close {
@@ -644,9 +649,6 @@ max-width:260px;
   cursor: pointer;
   z-index: 10000;
 }
-</style>
-</head>
-<body>
 
   <header>
     <div class="container header-inner">
@@ -1170,34 +1172,33 @@ max-width:260px;
 
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" id="lightbox-img">
+  <img class="lightbox-img" id="lightbox-img" alt="">
 </div>
 
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox-close");
-
-document.querySelectorAll(".galerij-grid img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-  });
-});
-
-closeBtn.onclick = function() {
-  lightbox.style.display = "none";
-};
-
-lightbox.onclick = function(e) {
-  if (e.target !== lightboxImg) {
-    lightbox.style.display = "none";
-  }
-};
-</script>
-</script>
 document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".galerij-grid img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
+
   const vandaag = new Date();
   vandaag.setHours(0, 0, 0, 0);
 
@@ -1211,5 +1212,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-</body>
 </html>
