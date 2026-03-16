@@ -1190,27 +1190,7 @@ lightbox.onclick = function(e) {
     lightbox.style.display = "none";
   }
 }
-</script>
-		<script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox-close");
 
-document.querySelectorAll(".galerij-grid img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "block";
-    lightboxImg.src = img.src;
-  });
-});
-
-closeBtn.onclick = function() {
-  lightbox.style.display = "none";
-}
-
-lightbox.onclick = function(e) {
-  if (e.target !== lightboxImg) {
-    lightbox.style.display = "none";
-  }
 }
 document.addEventListener("DOMContentLoaded", function () {
   const vandaag = new Date();
