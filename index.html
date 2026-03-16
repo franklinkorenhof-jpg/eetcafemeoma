@@ -1,1293 +1,370 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eetcafé Me Oma</title>
-  <style>
-    :root{
-      --bg:#f6efe6;
-      --paper:#f8ead9;
-      --paper-2:#fff4e5;
-      --brown:#4d3428;
-      --brown-2:#7a442d;
-      --brown-3:#9c4f2f;
-      --gold:#d9b79a;
-      --text:#3d271f;
-      --light:#fff7ef;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Georgia, "Times New Roman", serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1200px, calc(100% - 32px)); margin:0 auto}
-    .section{padding:70px 0}
-    .card{
-  background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
-  border:1px solid #d9c3ad;
-  border-radius:22px;
-  padding:24px 28px;
-  box-shadow:0 8px 20px rgba(60,35,20,.08);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eetcafé Me Oma</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, "Times New Roman", serif;
+background:#f6efe6;
+color:#3d271f;
+line-height:1.5;
 }
 
-	.mee-eet .card h3{
-  color:#4b2d1f;
+.container{
+width:min(1200px, calc(100% - 32px));
+margin:0 auto;
 }
 
-.mee-eet .card strong{
-  color:#7a442d;
-  font-size:15px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+.section{
+padding:70px 0;
 }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(246,239,230,.95);
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid #d8c7b3;
-    }
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-    .brand img{
-      height:52px;
-      width:auto;
-      border-radius:8px;
-    }
-    .brand-title{
-      font-size:30px;
-      font-weight:700;
-      margin:0;
-    }
-    .brand-sub{
-      margin:0;
-      font-size:14px;
-      color:#7c6554;
-    }
-    nav{
-      display:flex;
-      gap:22px;
-      font-size:15px;
-      font-weight:700;
-    }
-    nav a:hover{color:var(--brown-3)}
-
-    .hero{
-      position:relative;
-      color:white;
-      border-bottom:1px solid #d8c7b3;
-      background-image:url("achtergrond.jpg");
-      background-size:cover;
-      background-position:center;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.58);
-    }
-    .hero-inner{
-      position:relative;
-      display:grid;
-      grid-template-columns:1.2fr .9fr;
-      gap:36px;
-      padding:90px 0;
-      align-items:center;
-    }
-    .pill{
-      display:inline-block;
-      border:1px solid rgba(255,255,255,.35);
-      border-radius:999px;
-      padding:8px 16px;
-      font-size:14px;
-      margin-bottom:18px;
-    }
-    h1{
-      font-size:62px;
-      line-height:1.05;
-      margin:0 0 16px 0;
-    }
-    .hero p.lead{
-      font-size:21px;
-      max-width:700px;
-      margin:0 0 28px 0;
-    }
-    .btns{display:flex; gap:14px; flex-wrap:wrap}
-    .btn{
-      display:inline-block;
-      padding:14px 22px;
-      border-radius:18px;
-      font-weight:700;
-    }
-    .btn-light{background:white;color:var(--brown-2)}
-    .btn-outline{border:1px solid rgba(255,255,255,.45); color:white}
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    .glass{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:28px;
-      padding:26px;
-      backdrop-filter:blur(6px);
-    }
-    .glass h3{
-      margin:0 0 8px 0;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:.15em;
-      color:rgba(255,255,255,.75);
-    }
-    .glass p{
-      margin:0;
-      font-size:28px;
-      font-weight:700;
-    }
-    .glass small{
-      display:block;
-      margin-top:8px;
-      color:rgba(255,255,255,.85);
-      font-size:16px;
-    }
-
-    .highlights{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-    .highlight{
-      background:rgba(255,255,255,.72);
-      border:1px solid #dccbbb;
-      border-radius:20px;
-      padding:18px;
-      font-weight:700;
-      text-align:center;
-    }
-
-    .menu-section{
-      background:linear-gradient(180deg, #5b2f1f 0%, #7a442d 100%);
-      color:var(--light);
-      border-top:1px solid #c9a987;
-      border-bottom:1px solid #c9a987;
-    }
-    .section-title{
-      text-align:center;
-      margin-bottom:40px;
-    }
-   .eyebrow{
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:.25em;
-  font-weight:700;
-  color:#2b1d14;        /* donkerbruin/zwart */
-  background:#efe3d7;   /* warm balkje */
-  padding:4px 10px;
-  border-radius:6px;
-  display:inline-block;
-  margin:0 0 10px 0;
-    }
-    .section-title h2{
-      margin:0;
-      font-size:48px;
-      line-height:1.1;
-    }
-    .section-title p{
-      margin:12px auto 0;
-      max-width:760px;
-      color:#f7e2cf;
-      font-size:19px;
-    }
-
-    .menu-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-    }
-    .menu-card{
-      background:var(--paper);
-      color:var(--text);
-      border:1px solid var(--gold);
-      border-radius:32px;
-      padding:32px;
-      box-shadow:0 10px 28px rgba(0,0,0,.12);
-    }
-    .menu-card-title{
-      text-align:center;
-      margin:0 0 24px 0;
-      padding-bottom:14px;
-      border-bottom:2px solid #b86a3d;
-      text-transform:uppercase;
-      font-size:34px;
-      color:#7f3f23;
-    }
-    .menu-columns{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-    }
-    .menu-group{margin-bottom:28px}
-    .menu-group h4{
-      margin:0 0 12px 0;
-      font-size:21px;
-      text-transform:uppercase;
-      text-decoration:underline;
-      text-underline-offset:6px;
-      text-decoration-color:#b86a3d;
-    }
-    .menu-row{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      padding:3px 0;
-      font-size:21px;
-    }
-    .menu-row span:last-child{
-      white-space:nowrap;
-      font-weight:700;
-    }
-
- .mee-eet{
-  padding:60px 0;
-  background:#f3e7dc;
+header{
+background:#f6efe6;
+border-bottom:1px solid #d8c7b3;
 }
 
-    .mee-list{
-  display:grid;
-  gap:18px;
-  margin-top:24px;
-}
-    .mee-item{
-  background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
-  border:1px solid #d9c3ad;
-  border-radius:22px;
-  padding:24px 28px;
-  display:grid;
-  grid-template-columns:1fr 1fr auto;
-  gap:16px;
-  align-items:start;
-  box-shadow:0 8px 20px rgba(60,35,20,.08);
+.header-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:14px 0;
 }
 
-	.mee-item strong{
-  color:#7a442d;
-  font-size:15px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
 }
 
-.mee-item:last-child,
-.mee-item div:last-child{
-  font-weight:700;
+.brand img{
+height:52px;
+border-radius:8px;
 }
 
-    .two-col{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:26px;
-    }
-    .soft{
-      background:linear-gradient(135deg,#fff4e5 0%,#f5e2cf 100%);
-      border:1px solid #dccbbb;
-      border-radius:32px;
-      padding:36px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-    }
-    .soft h2,.open-card h2,.contact-card h2{margin:10px 0 12px 0;font-size:42px;line-height:1.1}
-    .soft p,.open-card p,.contact-card p{font-size:19px;color:#6f5b4e}
-    .info-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-      margin-top:20px;
-    }
-    .mini{
-      background:rgba(255,255,255,.8);
-      padding:20px;
-      border-radius:20px;
-    }
-    .mini strong{display:block;font-size:22px;margin-top:4px}
-
-    .open-card{
-      background:white;
-      border:1px solid #dccbbb;
-      border-radius:32px;
-      padding:32px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-    }
-    .open-list{display:grid; gap:10px; margin-top:18px}
-    .open-row{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      background:#f8efe6;
-      padding:14px 16px;
-      border-radius:16px;
-      font-size:18px;
-    }
-
-    .about{
-      background:var(--brown);
-      color:white;
-      border-top:1px solid #d8c7b3;
-      border-bottom:1px solid #d8c7b3;
-    }
-    .about p{color:rgba(255,255,255,.84); font-size:19px}
-    .about-badges{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    .badge{
-      background:rgba(255,255,255,.1);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:22px;
-      padding:18px;
-      font-size:18px;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-    }
-    .contact-card,.why-card{
-      border:1px solid #dccbbb;
-      border-radius:32px;
-      padding:32px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-    }
-    .contact-card{background:white}
-    .why-card{background:var(--paper-2)}
-    .contact-card p,.why-card li{font-size:19px;color:#6f5b4e}
-    .contact-lines p{margin:10px 0}
-    .why-card ul{margin:18px 0 0 22px}
-    .why-card li{margin:8px 0}
-
-    .map-wrap{
-      overflow:hidden;
-      border-radius:32px;
-      border:1px solid #dccbbb;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-    }
-    iframe{display:block;width:100%;height:420px;border:0}
-
-    footer{
-      border-top:1px solid #d8c7b3;
-      background:#f2e7da;
-      color:#6f5b4e;
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      padding:24px 0;
-      font-size:15px;
-    }
-
-    @media (max-width: 980px){
-      nav{display:none}
-      .hero-inner,
-      .menu-grid,
-      .two-col,
-      .contact-grid,
-      .menu-columns,
-      .highlights{
-        grid-template-columns:1fr;
-      }
-      h1{font-size:46px}
-      .section-title h2,
-      .soft h2,.open-card h2,.contact-card h2{font-size:34px}
-      .mee-item{grid-template-columns:1fr}
-      .footer-inner{flex-direction:column}
-    }
-
-    @media (max-width: 640px){
-      .hero-grid,
-      .info-grid,
-      .about-badges{
-        grid-template-columns:1fr;
-      }
-      .brand-title{font-size:24px}
-      .brand img{height:42px}
-      .menu-card-title{font-size:28px}
-      .menu-row{font-size:18px}
-      .glass p{font-size:24px}
-    }
-	  /* EMAIL BLOK */
-.email-adres{
-font-size:22px;
+.brand-title{
+font-size:30px;
 font-weight:700;
-margin-bottom:6px;
+margin:0;
 }
 
-.email-tekst{
-margin-bottom:16px;
-opacity:.9;
+.brand-sub{
+margin:0;
+font-size:14px;
+color:#7c6554;
 }
 
-/* SOCIALS */
-.contact-socials{
+nav{
 display:flex;
-gap:18px;
-align-items:center;
+gap:22px;
+font-weight:700;
 }
 
-/* ICONEN */
-.social-icon{
-width:36px;
-height:36px;
-transition:.2s;
+.hero{
+background-image:url("achtergrond.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+padding:100px 0;
 }
 
-/* FACEBOOK BLAUW */
-.fb{
-filter: invert(32%) sepia(96%) saturate(1700%) hue-rotate(205deg);
+.hero h1{
+font-size:60px;
+margin:0 0 10px 0;
 }
 
-/* INSTAGRAM KLEUR */
-.insta{
-filter: invert(38%) sepia(88%) saturate(1800%) hue-rotate(310deg);
+.hero p{
+font-size:22px;
+max-width:700px;
 }
 
-.social-icon:hover{
-transform:scale(1.15);
-}
-/* ===== EVENEMENT KAART FIX ===== */
-
-.event-card p{
-font-size:16px;
-line-height:1.6;
-margin-bottom:10px;
+.soft{
+background:#fff4e5;
+border-radius:25px;
+padding:35px;
+border:1px solid #dccbbb;
 }
 
-.event-card h3{
-margin-bottom:10px;
-color:#3d2b1f;
-}
-
-.event-card img{
-margin-bottom:15px;
-}
-/* MEE-EET BLOK MET FOTO NAAST TEKST */
-
-.meeet-wrap{
+.meeet-kalender{
 display:flex;
-gap:20px;
-align-items:center;
-}
-
-.meeet-wrap img{
-width:160px;
-border-radius:12px;
-}
-
-.meeet-text{
-flex:1;
-}
-
-@media(max-width:700px){
-.meeet-wrap{
 flex-direction:column;
-text-align:center;
-}
-
-.meeet-wrap img{
-width:100%;
-max-width:260px;
-}
-}
-	  .meeet-kalender{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-  margin-top:28px;
+gap:25px;
+margin-top:30px;
 }
 
 .meeet-item{
-  display:flex;
-  gap:22px;
-  align-items:center;
-  background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
-  border:1px solid #d9c3ad;
-  border-radius:22px;
-  padding:20px 24px;
-  box-shadow:0 8px 20px rgba(60,35,20,.08);
+display:flex;
+gap:20px;
+background:#efe1d2;
+border-radius:20px;
+padding:20px;
 }
 
 .meeet-item img{
-  width:180px;
-  height:auto;
-  border-radius:14px;
-  flex-shrink:0;
-}
-
-.meeet-info{
-  flex:1;
-}
-
-.meeet-datum{
-  display:inline-block;
-  background:#e6d7c8;
-  color:#2b1d14;
-  font-size:14px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  padding:6px 12px;
-  border-radius:8px;
-  margin-bottom:12px;
+width:180px;
+border-radius:10px;
 }
 
 .meeet-info h3{
-  margin:0 0 12px 0;
-  color:#4b2d1f;
-  font-size:34px;
-}
-
-.meeet-info p{
-  margin:0 0 14px 0;
-  font-size:18px;
-  line-height:1.6;
-  color:#5b4638;
+margin:0 0 10px 0;
+font-size:28px;
 }
 
 .meeet-prijs{
-  font-weight:700;
-  font-size:24px;
-  color:#9c4f2f;
+font-weight:bold;
+font-size:22px;
+color:#9c4f2f;
 }
 
-@media(max-width:700px){
-  .meeet-item{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .meeet-item img{
-    width:100%;
-    max-width:280px;
-  }
-
-  .meeet-info h3{
-    font-size:28px;
-  }
-}
-	  .galerij-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+.galerij-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
 }
 
-.galerij-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  cursor: pointer;
+.galerij-grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
 }
 
-@media (max-width: 768px) {
-  .galerij-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
 }
 
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.88);
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+.lightbox-img{
+max-width:90%;
+max-height:90%;
 }
 
-.lightbox-img {
-  display: block;
-  max-width: 92vw;
-  max-height: 92vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+.lightbox-close{
+position:fixed;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
 }
 
-.lightbox-close {
-  position: fixed;
-  top: 18px;
-  right: 28px;
-  color: white;
-  font-size: 40px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 10000;
+footer{
+border-top:1px solid #d8c7b3;
+background:#f2e7da;
+padding:20px 0;
+text-align:center;
 }
+
 </style>
 </head>
+
 <body>
-  <header>
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="logo-me-oma-nieuw.jpg" alt="Logo Eetcafé Me Oma">
-        <div>
-          <p class="brand-title">Eetcafé Me Oma</p>
-          <p class="brand-sub">Het gezelligste bruine café van Rotterdam Zuid</p>
-        </div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menukaart</a>
-        <a href="#mee-eet">Mee-eet avonden</a>
-        <a href="#wedstrijden">Wedstrijden</a>
-		 <a href="#evenementen">Evenementen</a> 
-        <a href="#over-ons">Over ons</a>
-		  <a href="#fotogalerij">Fotogalerij</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <section id="home" class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="pill">Bruin café • Rotterdam Zuid • Feyenoord op groot scherm</div>
-        <h1>Welkom bij Eetcafé Me Oma</h1>
-        <p class="lead">
-          Het gezelligste bruine café van Rotterdam Zuid. Kom langs voor een drankje, een hapje, een mooie voetbalmiddag of avond en beleef alle wedstrijden van Feyenoord op groot scherm.
-        </p>
-        <div class="btns">
-          <a class="btn btn-light" href="#contact">Bekijk contactgegevens</a>
-          <a class="btn btn-outline" href="#menu">Bekijk de menukaart</a>
-        </div>
-      </div>
+<header>
+<div class="container header-inner">
 
-      <div class="hero-grid">
-  <div class="glass">
-    <h3>Adres</h3>
-    <p>Tennisstraat 47</p>
-    <small>3078 ZJ Rotterdam</small>
-  </div>
-
-  <div class="glass">
-    <div class="contact-email">
-      <h4>E-MAIL</h4>
-      <p class="email-adres">vanoudsoma@gmail.com</p>
-      <p class="email-tekst">Voor vragen, feesten en partijen</p>
-
-      <div class="contact-socials">
-        <a href="https://www.facebook.com/eetcafemeoma" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon fb">
-        </a>
-
-        <a href="https://www.instagram.com/eetcafemeoma" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon insta">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="glass">
-    <h4>SFEER</h4>
-    <p>Bruin café met karakter</p>
-    <small>Gezelligheid, voetbal en gastvrijheid komen hier samen.</small>
-  </div>
-
-  <div class="glass">
-    <h4>GEOPEND</h4>
-    <p>Dinsdag, donderdag, vrijdag en zaterdag</p>
-    <small>Van 14:00 tot 00:00 · Zondag alleen bij Feyenoord thuis</small>
-  </div>
+<div class="brand">
+<img src="logo-me-oma-nieuw.jpg">
+<div>
+<p class="brand-title">Eetcafé Me Oma</p>
+<p class="brand-sub">Het gezelligste bruine café van Rotterdam Zuid</p>
 </div>
-  </section>
+</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="highlights">
-        <div class="highlight">Het gezelligste bruine café van Rotterdam Zuid</div>
-        <div class="highlight">Alle wedstrijden van Feyenoord op groot scherm</div>
-        <div class="highlight">Gezellige sfeer en gastvrijheid</div>
-        <div class="highlight">Drankjes en borrelhapjes</div>
-        <div class="highlight">Feesten en partijen mogelijk</div>
-        <div class="highlight">Makkelijk bereikbaar in Rotterdam Zuid</div>
-      </div>
-    </div>
-  </section>
+<nav>
+<a href="#home">Home</a>
+<a href="#menu">Menukaart</a>
+<a href="#mee-eet">Mee-eten</a>
+<a href="#evenementen">Evenementen</a>
+<a href="#fotogalerij">Fotogalerij</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <section id="menu" class="section menu-section">
-    <div class="container">
-      <div class="section-title">
-        <p class="eyebrow">Menukaart</p>
-        <h2>Prijslijst dranken & snacks</h2>
-		  prijswijzigingen en typefouten voorbehouden
-    
-      </div>
+</div>
+</header>
 
-      <div class="menu-grid">
-        <div class="menu-card">
-          <h3 class="menu-card-title">Prijslijst dranken</h3>
+<section id="home" class="hero">
+<div class="container">
 
-          <div class="menu-columns">
-            <div>
-              <div class="menu-group">
-                <h4>Warme dranken</h4>
-                <div class="menu-row"><span>Koffie</span><span>€ 2,00</span></div>
-                <div class="menu-row"><span>Thee</span><span>€ 2,00</span></div>
-              </div>
+<h1>Welkom bij Eetcafé Me Oma</h1>
 
-              <div class="menu-group">
-                <h4>Frisdrank</h4>
-                <div class="menu-row"><span>Spa Blauw</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Spa Rood</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Cola</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Cola Zero</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Fanta</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Sprite</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Cassis</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Bitter Lemon</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Tonic</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Ice Tea</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Ice Tea Green</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Appelsap</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Jus d' Orange</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Red Bull</span><span>€ 3,75</span></div>
-              </div>
+<p>
+Het gezelligste bruine café van Rotterdam Zuid.
+Kom langs voor een drankje, een hapje en beleef alle wedstrijden
+van Feyenoord op groot scherm.
+</p>
 
-              <div class="menu-group">
-                <h4>Bier</h4>
-                <div class="menu-row"><span>Fluit</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Groot</span><span>€ 2,75</span></div>
-                <div class="menu-row"><span>Radler (2%)</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Radler (0%)</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Heineken 0% (Fles)</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Rose Bier</span><span>€ 3,75</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Wijn</h4>
-                <div class="menu-row"><span>Witte Wijn (Droog/Zoet)</span><span>€ 4,00</span></div>
-                <div class="menu-row"><span>Rode Wijn</span><span>€ 4,00</span></div>
-                <div class="menu-row"><span>Rose</span><span>€ 4,00</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Shotjes</h4>
-                <div class="menu-row"><span>Diversen</span><span>€ 2,75</span></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="menu-group">
-                <h4>Binnenlands gedistilleerd</h4>
-                <div class="menu-row"><span>Jenever Ketel 1</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Vieux</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Berenburg</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Apfelkorn</span><span>€ 3,50</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Buitenlands gedistilleerd</h4>
-                <div class="menu-row"><span>Bacardi</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Bacardi Lemon</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Bacardi Razz</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Wodka</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Rode Wodka</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Malibu</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Passoa</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Gin</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Pisang Ambon</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Captain Morgan Spice</span><span>€ 4,50</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Likeur</h4>
-                <div class="menu-row"><span>Amaretto</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Baileys</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Tia Maria</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Licor 43</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Boswandeling</span><span>€ 4,50</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Cognac</h4>
-                <div class="menu-row"><span>Courvoisier</span><span>€ 5,50</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Whiskey</h4>
-                <div class="menu-row"><span>Red Label</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Black Label</span><span>€ 4,50</span></div>
-                <div class="menu-row"><span>Jack Daniels</span><span>€ 5,50</span></div>
-                <div class="menu-row"><span>Four Roses</span><span>€ 5,50</span></div>
-                <div class="menu-row"><span>Southern Comfort</span><span>€ 5,50</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-card">
-          <h3 class="menu-card-title">Prijslijst snacks</h3>
-
-          <div class="menu-columns">
-            <div>
-              <div class="menu-group">
-                <h4>Patat</h4>
-                <div class="menu-row"><span>Patat</span><span>€ 2,75</span></div>
-                <div class="menu-row"><span>Patat Mayo</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Patat Ketchup/Curry</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Patat Speciaal</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Patat Pindasaus</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Patat Oorlog</span><span>€ 3,25</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Snacks</h4>
-                <div class="menu-row"><span>Frikandel</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Kroket</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Kipkorn</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Kaassoufle</span><span>€ 2,50</span></div>
-                <div class="menu-row"><span>Mexicano</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Portie Bitterbal</span><span>€ 3,00</span></div>
-                <div class="menu-row"><span>Bamihap</span><span>€ 2,75</span></div>
-                <div class="menu-row"><span>Loempia</span><span>€ 4,00</span></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="menu-group">
-                <h4>Broodjes</h4>
-                <div class="menu-row"><span>Broodje Frikandel</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Broodje Kroket</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Broodje Kipkorn</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Broodje Kaassoufle</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Broodje Hamburger</span><span>€ 4,00</span></div>
-                <div class="menu-row"><span>Broodje Mexicano</span><span>€ 4,00</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Sauzen</h4>
-                <div class="menu-row"><span>Mayonaise</span><span>€ 0,25</span></div>
-                <div class="menu-row"><span>Curry</span><span>€ 0,25</span></div>
-                <div class="menu-row"><span>Ketchup</span><span>€ 0,25</span></div>
-                <div class="menu-row"><span>Speciaal</span><span>€ 0,50</span></div>
-                <div class="menu-row"><span>Pindasaus</span><span>€ 0,50</span></div>
-                <div class="menu-row"><span>Oorlog</span><span>€ 0,50</span></div>
-              </div>
-
-              <div class="menu-group">
-                <h4>Bittergarnituur</h4>
-                <div class="menu-row"><span>Diverse Snacks (24 Stuks) met Saus</span><span>€ 10,00</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <section id="mee-eet" class="section">
-  <div class="container">
-    <div class="mee-eet">
-      <p class="eyebrow" style="color:#9c4f2f">Mee-eet kalender</p>
-      <h2 style="margin:0;font-size:42px;line-height:1.1">Aankomende mee-eet avonden</h2>
-      <p style="font-size:19px;color:#6f5b4e;max-width:800px">
-        Bekijk hieronder onze geplande mee-eet avonden. Aanmelden kan in het café, via e-mail of via de socials. Er dient vooraf betaald te worden.
-      </p>
-
-      <div class="meeet-kalender">
-
-        <div class="meeet-item">
-          <img src="spaghetti-19maart.jpg" alt="Spaghetti Bolognese">
-          <div class="meeet-info">
-            <div class="meeet-datum">19 maart</div>
-            <h3>Spaghetti Bolognese</h3>
-            <p>
-              Spaghetti Bolognese met geraspte kaas.<br>
-              Vanille ijs met slagroom.<br>
-              Koffie of thee.
-            </p>
-            <div class="meeet-prijs">€7,00 per persoon</div>
-          </div>
-        </div>
-
-        <div class="meeet-item">
-          <img src="loempia- 27maart.jpg" alt="Loempia speciaal">
-          <div class="meeet-info">
-            <div class="meeet-datum">27 maart</div>
-            <h3>Loempia speciaal</h3>
-            <p>
-              Loempia speciaal met stokje saté, gebakken ei en pindasaus.<br>
-              Eventueel met friet (+ €2,00 extra).
-            </p>
-            <div class="meeet-prijs">€6,50 per persoon</div>
-          </div>
-        </div>
-
-        <div class="meeet-item">
-          <img src="varkenshaasmedaillons-31maart.jpg" alt="Varkenshaasmedaillons">
-          <div class="meeet-info">
-            <div class="meeet-datum">31 maart</div>
-            <h3>Varkenshaasmedaillons</h3>
-            <p>
-              Varkenshaas medaillons met champignon- of peperroomsaus.<br>
-              Salade en friet.<br>
-              Dame Blanche of Kaat Mossel.<br>
-              Koffie of thee.
-            </p>
-            <div class="meeet-prijs">€9,50 per persoon</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+</div>
 </section>
 
-<section id="wedstrijden" class="section">
-  <div class="container two-col">
-    <div class="soft">
-      <p class="eyebrow" style="color:#9c4f2f">Wedstrijden & feesten</p>
-      <h2>Voetbal kijken en samen genieten</h2>
+<section id="mee-eet" class="section">
+<div class="container">
 
-      <div class="wedstrijden-blok">
-        <h3>Aankomende thuiswedstrijden</h3>
-        <ul class="wedstrijden-lijst">
-          <li class="wedstrijd-item" data-date="2026-03-15">
-            <strong>Feyenoord - Excelsior</strong><br>Zondag 15 maart 2026, 14:30 uur
-          </li>
-          <li class="wedstrijd-item" data-date="2026-03-22">
-            <strong>Feyenoord - Ajax</strong><br>Zondag 22 maart 2026, 14:30 uur
-          </li>
-          <li class="wedstrijd-item" data-date="2026-04-25">
-            <strong>Feyenoord - FC Groningen</strong><br>Zaterdag 25 april 2026, 16:30 uur
-          </li>
-          <li class="wedstrijd-item" data-date="2026-05-10">
-            <strong>Feyenoord - AZ Alkmaar</strong><br>Zondag 10 mei 2026, 16:45 uur
-          </li>
-        </ul>
-      </div>
+<div class="soft">
 
-      <p>
-        Alle wedstrijden van Feyenoord zijn te zien op groot scherm. Daarnaast is Eetcafé Me Oma ook uw adres voor feesten en partijen in een warme en gezellige setting.
-      </p>
+<h2>Mee-eet kalender</h2>
 
-      <div class="info-grid">
-        <div class="mini">
-          <div style="color:#9c4f2f;font-size:14px">Live voetbal</div>
-          <strong>Feyenoord op groot scherm</strong>
-          <div style="color:#6f5b4e;margin-top:6px">Beleef iedere wedstrijd in echte Rotterdamse sfeer.</div>
-        </div>
-        <div class="mini">
-          <div style="color:#9c4f2f;font-size:14px">Feesten & partijen</div>
-          <strong>Informeer naar de mogelijkheden</strong>
-          <div style="color:#6f5b4e;margin-top:6px">Geschikt voor gezellige bijeenkomsten en besloten momenten.</div>
-        </div>
-      </div>
-    </div>
+<div class="meeet-kalender">
 
-    <div class="open-card">
-      <p class="eyebrow" style="color:#9c4f2f">Openingstijden</p>
-      <div class="open-list">
-        <div class="open-row"><span>Maandag</span><span>Gesloten</span></div>
-        <div class="open-row"><span>Dinsdag</span><span>14:00 – 23:00</span></div>
-        <div class="open-row"><span>Woensdag</span><span>Gesloten</span></div>
-        <div class="open-row"><span>Donderdag</span><span>14:00 – 23:00</span></div>
-        <div class="open-row"><span>Vrijdag</span><span>14:00 – 00:00</span></div>
-        <div class="open-row"><span>Zaterdag</span><span>14:00 – 00:00</span></div>
-        <div class="open-row"><span>Zondag</span><span>Alleen geopend als Feyenoord thuis speelt. (Zie de socials voor actuele openingstijden.)</span></div>
-      </div>
-    </div>
-  </div>
+<div class="meeet-item">
+<img src="spaghetti-19maart.jpg">
+<div class="meeet-info">
+<h3>Spaghetti Bolognese</h3>
+<p>Met geraspte kaas + dessert + koffie of thee.</p>
+<div class="meeet-prijs">€7,00</div>
+</div>
+</div>
+
+<div class="meeet-item">
+<img src="loempia- 27maart.jpg">
+<div class="meeet-info">
+<h3>Loempia speciaal</h3>
+<p>Loempia met saté, ei en pindasaus.</p>
+<div class="meeet-prijs">€6,50</div>
+</div>
+</div>
+
+<div class="meeet-item">
+<img src="varkenshaasmedaillons-31maart.jpg">
+<div class="meeet-info">
+<h3>Varkenshaasmedaillons</h3>
+<p>Met friet en salade + dessert.</p>
+<div class="meeet-prijs">€9,50</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="evenementen" class="section">
-  <div class="container">
-    <div class="soft">
-      <p class="eyebrow" style="color:#9c4f2f">Evenementen</p>
-      <h2>Gezellige activiteiten bij Me Oma</h2>
-
-      <div class="glass event-card" style="max-width:900px; margin:30px auto 0;">
-        <img src="gourmetten-pasen.jpg" style="width:100%; border-radius:12px; margin-bottom:15px;" alt="Gourmetten bij Me Oma">
-
-        <h3>Gourmetten bij Me Oma</h3>
-
-        <p>
-          <strong>2e Paasdag – maandag 6 april</strong><br><br>
-
-          Wij openen vanaf <strong>16.00 uur</strong> en gaan weer eens gezellig gourmetten met elkaar.<br><br>
-
-          Iedereen krijgt een eigen portie vlees van ongeveer <strong>400 gram</strong>:
-          biefstuk – varkenshaas – kipfilet – slavink – hamburger – speklap.<br><br>
-
-          Diverse sauzen, salades, stokbrood met kruidenboter en andere bijgerechten.<br>
-          <strong>IJSBUFFET</strong>, diverse soorten ijs, sauzen en slagroom.<br>
-          Koffie of thee.<br><br>
-
-          <strong>€20 per persoon</strong><br><br>
-
-          Aanmelden kan tot en met <strong>donderdag 2 april</strong> en er dient vooraf betaald te worden.<br>
-          Er is een beperkt aantal plaatsen beschikbaar en vol is vol dus wees op tijd.
-        </p>
-      </div>
-
-      <div class="about-badges" style="margin-top:24px;">
-        <div class="glass">
-          <h4>Feestavonden</h4>
-          <p>Regelmatig gezellige feestavonden met muziek en onze huis DJ.</p>
-        </div>
-
-        <div class="glass">
-          <h4>Thema-avonden</h4>
-          <p>Denk aan karaoke, darts en speciale voetbalavonden.</p>
-        </div>
-
-        <div class="glass">
-          <h4>Besloten feesten</h4>
-          <p>Mogelijkheid voor verjaardagen en besloten partijen.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="over-ons" class="section about">
-  <div class="container two-col">
-    <div>
-      <p class="eyebrow">Over ons</p>
-      <h2 style="margin:0;font-size:42px;line-height:1.1">Een echt Rotterdams café met sfeer</h2>
-      <p>
-        Eetcafé Me Oma is het gezelligste bruine café van Rotterdam Zuid. Een plek waar mensen samenkomen voor een drankje, een praatje, een voetbalwedstrijd en een ontspannen sfeer.
-      </p>
-      <p>
-        Of u nu langskomt voor een gezellige middag, een avond met Feyenoord op groot scherm of een feestelijke gelegenheid: bij Me Oma staat gastvrijheid altijd centraal.
-      </p>
-    </div>
-
-    <div class="about-badges">
-      <div class="badge">Bruin café met karakter</div>
-      <div class="badge">Gezelligste van Rotterdam Zuid</div>
-      <div class="badge">Feyenoord live op groot scherm</div>
-      <div class="badge">Ook voor feesten en partijen</div>
-    </div>
-  </div>
-</section>
-
-<section id="fotogalerij" class="section">
-  <div class="container">
-    <div class="soft">
-      <p class="eyebrow" style="color:#9c4f2f">Sfeerfoto’s</p>
-      <h2>Kerst bij Eetcafé Me Oma</h2>
-      <p>Bekijk hier een sfeerimpressie van onze kerstmomenten bij Me Oma.</p>
-
-      <div class="galerij-grid">
-        <img src="kerst1 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 1">
-        <img src="kerst2 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 2">
-        <img src="kerst3 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 3">
-        <img src="kerst4 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 4">
-        <img src="kerst5 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 5">
-        <img src="kerst6 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 6">
-        <img src="kerst7 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 7">
-        <img src="kerst8 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 8">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container contact-grid">
-    <div class="contact-card">
-      <p class="eyebrow" style="color:#9c4f2f">Contact</p>
-      <h2>Neem contact met ons op</h2>
-      <p>
-        Voor vragen, feesten en partijen kunt u eenvoudig contact opnemen via e-mail of langskomen aan de Tennisstraat in Rotterdam Zuid.
-      </p>
-      <div class="contact-lines">
-        <p><strong>Naam:</strong> Eetcafé Me Oma</p>
-        <p><strong>Adres:</strong> Tennisstraat 47, 3078 ZJ Rotterdam</p>
-        <p><strong>E-mail:</strong> vanoudsoma@gmail.com</p>
-        <p><strong>Open:</strong> Dinsdag, donderdag, vrijdag en zaterdag</p>
-        <p><strong>Zondag:</strong> Alleen geopend als Feyenoord thuis speelt. Check de socials voor actuele openingstijden.</p>
-      </div>
-    </div>
-
-    <div class="why-card">
-      <p class="eyebrow" style="color:#9c4f2f">Waarom Me Oma?</p>
-      <ul>
-        <li>Bruin café met warme Rotterdamse sfeer</li>
-        <li>Feyenoord live op groot scherm</li>
-        <li>Gezellige mee-eet avonden en evenementen</li>
-        <li>Ook geschikt voor feesten en partijen</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="map-wrap">
-      <iframe
-        title="Google Maps"
-        src="https://www.google.com/maps?q=Tennisstraat+47+Rotterdam&output=embed"
-        loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-inner">
-    <div>© 2026 Eetcafé Me Oma. Alle rechten voorbehouden.</div>
-  </div>
-</footer>
-  <footer>
-    <div class="container footer-inner">
-      <div>© 2026 Eetcafé Me Oma. Alle rechten voorbehouden.</div>
-    
-    </div>
-	  <section id="evenementen" class="section">
 <div class="container">
+
+<div class="soft">
 
 <h2>Evenementen</h2>
 
-	<section id="evenementen" class="section">
-  <div class="container">
+<img src="gourmetten-pasen.jpg" style="width:100%;border-radius:10px;margin-bottom:20px;">
 
-    <div class="glass event-card" style="max-width:900px; margin:30px auto 0;">
-      <img src="gourmetten-pasen.jpg" style="width:100%; border-radius:12px; margin-bottom:15px;" alt="Gourmetten bij Me Oma">
+<h3>Gourmetten bij Me Oma</h3>
 
-      <h3>Gourmetten bij Me Oma</h3>
+<p>
+2e Paasdag – maandag 6 april<br><br>
 
-      <p>
-        <strong>2e Paasdag – maandag 6 april</strong><br><br>
+Iedereen krijgt ±400 gram vlees:
+biefstuk, varkenshaas, kipfilet, slavink,
+hamburger en speklap.<br><br>
 
-        Wij openen vanaf <strong>16.00 uur</strong> en gaan weer eens gezellig gourmetten met elkaar.<br><br>
+Inclusief salades, stokbrood,
+ijsbuffet en koffie/thee.<br><br>
 
-        Iedereen krijgt een eigen portie vlees van ongeveer <strong>400 gram</strong>:
-        biefstuk – varkenshaas – kipfilet – slavink – hamburger – speklap.<br><br>
+<strong>€20 per persoon</strong>
+</p>
 
-        Diverse sauzen, salades, stokbrood met kruidenboter en andere bijgerechten.<br>
-        <strong>IJSBUFFET</strong>, diverse soorten ijs, sauzen en slagroom.<br>
-        Koffie of thee.<br><br>
-
-        <strong>€20 per persoon</strong><br><br>
-
-        Aanmelden kan tot en met <strong>donderdag 2 april</strong> en er dient vooraf betaald te worden.<br>
-        Er is een beperkt aantal plaatsen beschikbaar en vol is vol dus wees op tijd!!
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<div class="about-badges">
-
-<div class="glass">
-<h4>Feestavonden</h4>
-<p>Regelmatig gezellige feestavonden met muziek en onze huis DJ.</p>
-</div>
-
-<div class="glass">
-<h4>Thema-avonden</h4>
-<p>Denk aan karaoke, darts en speciale voetbalavonden.</p>
-</div>
-
-<div class="glass">
-<h4>Besloten feesten</h4>
-<p>Mogelijkheid voor verjaardagen en besloten partijen.</p>
-</div>
 </div>
 </div>
 </section>
-	  <section id="fotogalerij" class="section">
-  <div class="container">
-    <div class="soft">
-      <p class="eyebrow" style="color:#9c4f2f">Sfeerfoto’s</p>
-      <h2>Kerst bij Eetcafé Me Oma</h2>
-      <p>Bekijk hier een sfeerimpressie van onze kerstmomenten bij Me Oma.</p>
 
-      <div class="galerij-grid">
-        <img src="kerst1 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 1">
-        <img src="kerst2 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 2">
-        <img src="kerst3 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 3">
-        <img src="kerst4 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 4">
-        <img src="kerst5 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 5">
-        <img src="kerst6 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 6">
-        <img src="kerst7 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 7">
-        <img src="kerst8 2025.jpg" alt="Kerst bij Eetcafé Me Oma foto 8">
-      </div>
-    </div>
-  </div>
+<section id="fotogalerij" class="section">
+<div class="container">
+
+<div class="soft">
+
+<h2>Fotogalerij</h2>
+
+<div class="galerij-grid">
+
+<img src="kerst1 2025.jpg">
+<img src="kerst2 2025.jpg">
+<img src="kerst3 2025.jpg">
+<img src="kerst4 2025.jpg">
+<img src="kerst5 2025.jpg">
+<img src="kerst6 2025.jpg">
+<img src="kerst7 2025.jpg">
+<img src="kerst8 2025.jpg">
+
+</div>
+
+</div>
+</div>
 </section>
 
+<section id="contact" class="section">
+<div class="container">
 
-  </footer>
+<div class="soft">
+
+<h2>Contact</h2>
+
+<p>
+Eetcafé Me Oma<br>
+Tennisstraat 47<br>
+3078 ZJ Rotterdam
+</p>
+
+<p>
+Email: vanoudsoma@gmail.com
+</p>
+
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 Eetcafé Me Oma
+</footer>
 
 <div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" id="lightbox-img" alt="">
+<span class="lightbox-close">&times;</span>
+<img class="lightbox-img" id="lightbox-img">
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
 
-  document.querySelectorAll(".galerij-grid img").forEach(function (img) {
-    img.addEventListener("click", function () {
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-    });
-  });
+document.addEventListener("DOMContentLoaded",function(){
 
-  closeBtn.addEventListener("click", function () {
-    lightbox.style.display = "none";
-  });
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+const closeBtn=document.querySelector(".lightbox-close")
 
-  lightbox.addEventListener("click", function (e) {
-    if (e.target !== lightboxImg) {
-      lightbox.style.display = "none";
-    }
-  });
+document.querySelectorAll(".galerij-grid img").forEach(img=>{
 
-  const vandaag = new Date();
-  vandaag.setHours(0, 0, 0, 0);
+img.addEventListener("click",function(){
 
-  document.querySelectorAll(".wedstrijd-item").forEach(function (item) {
-    const datum = item.getAttribute("data-date");
-    const wedstrijdDatum = new Date(datum + "T00:00:00");
+lightbox.style.display="flex"
+lightboxImg.src=img.src
 
-    if (wedstrijdDatum < vandaag) {
-      item.style.display = "none";
-    }
-  });
-});
+})
+
+})
+
+closeBtn.addEventListener("click",function(){
+lightbox.style.display="none"
+})
+
+lightbox.addEventListener("click",function(e){
+
+if(e.target!==lightboxImg){
+lightbox.style.display="none"
+}
+
+})
+
+})
+
 </script>
+
 </body>
 </html>
