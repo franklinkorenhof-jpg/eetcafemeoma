@@ -517,6 +517,82 @@ width:100%;
 max-width:260px;
 }
 }
+	  .meeet-kalender{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  margin-top:28px;
+}
+
+.meeet-item{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
+  border:1px solid #d9c3ad;
+  border-radius:22px;
+  padding:20px 24px;
+  box-shadow:0 8px 20px rgba(60,35,20,.08);
+}
+
+.meeet-item img{
+  width:180px;
+  height:auto;
+  border-radius:14px;
+  flex-shrink:0;
+}
+
+.meeet-info{
+  flex:1;
+}
+
+.meeet-datum{
+  display:inline-block;
+  background:#e6d7c8;
+  color:#2b1d14;
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  padding:6px 12px;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.meeet-info h3{
+  margin:0 0 12px 0;
+  color:#4b2d1f;
+  font-size:34px;
+}
+
+.meeet-info p{
+  margin:0 0 14px 0;
+  font-size:18px;
+  line-height:1.6;
+  color:#5b4638;
+}
+
+.meeet-prijs{
+  font-weight:700;
+  font-size:24px;
+  color:#9c4f2f;
+}
+
+@media(max-width:700px){
+  .meeet-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .meeet-item img{
+    width:100%;
+    max-width:280px;
+  }
+
+  .meeet-info h3{
+    font-size:28px;
+  }
+}
 </style>
 </head>
 <body>
@@ -790,81 +866,63 @@ max-width:260px;
 
         <div class="cards">
 
-<div class="card meeet-card">
+<section id="mee-eet" class="section">
+  <div class="container">
+    <div class="mee-eet">
+      <p class="eyebrow" style="color:#9c4f2f">Mee-eet kalender</p>
+      <h2 style="margin:0;font-size:42px;line-height:1.1">Aankomende mee-eet avonden</h2>
+      <p style="font-size:19px;color:#6f5b4e;max-width:800px">
+        Bekijk hieronder onze geplande mee-eet avonden. Aanmelden kan in het café.
+      </p>
 
-<div class="meeet-wrap">
+      <div class="meeet-kalender">
 
-<img src="spaghetti-19maart.jpg" alt="Spaghetti Bolognese">
+        <div class="meeet-item">
+          <img src="spaghetti-19maart.jpg" alt="Spaghetti Bolognese">
+          <div class="meeet-info">
+            <div class="meeet-datum">19 maart</div>
+            <h3>Spaghetti Bolognese</h3>
+            <p>
+              Spaghetti Bolognese met geraspte kaas.<br>
+              Vanille ijs met slagroom.<br>
+              Koffie of thee.
+            </p>
+            <div class="meeet-prijs">€7,00 per persoon</div>
+          </div>
+        </div>
 
-<div class="meeet-text">
+        <div class="meeet-item">
+          <img src="loempia-27maart.jpg" alt="Loempia speciaal">
+          <div class="meeet-info">
+            <div class="meeet-datum">27 maart</div>
+            <h3>Loempia speciaal</h3>
+            <p>
+              Loempia speciaal met stokje saté, gebakken ei en pindasaus.<br>
+              Eventueel met friet (+ €2,00 extra).
+            </p>
+            <div class="meeet-prijs">€6,50 per persoon</div>
+          </div>
+        </div>
 
-<span class="date-label">19 MAART</span>
+        <div class="meeet-item">
+          <img src="varkenshaasmedaillons-31maart.jpg" alt="Varkenshaasmedaillons">
+          <div class="meeet-info">
+            <div class="meeet-datum">31 maart</div>
+            <h3>Varkenshaasmedaillons</h3>
+            <p>
+              Varkenshaas medaillons met champignon- of peperroomsaus.<br>
+              Salade en friet.<br>
+              Dame Blanche of Kaat Mossel.<br>
+              Koffie of thee.
+            </p>
+            <div class="meeet-prijs">€9,50 per persoon</div>
+          </div>
+        </div>
 
-<h3>Spaghetti Bolognese</h3>
-
-<p>
-Spaghetti Bolognese met geraspte kaas.<br>
-Vanille ijs met slagroom.<br>
-Koffie of thee.
-</p>
-
-<strong>€7,00 PER PERSOON</strong>
-
-</div>
-
-</div>
-</div>
-
-  <<div class="card meeet-card">
-
-<div class="meeet-wrap">
-
-<img src="loempia-27maart.jpg" alt="Loempia">
-
-<div class="meeet-text">
-
-<span class="date-label">27 MAART</span>
-
-<h3>Loempia</h3>
-
-<p>
-Loempia met satésaus.<br>
-Vanille ijs met slagroom.<br>
-Koffie of thee.
-</p>
-
-<strong>€7,00 PER PERSOON</strong>
-
-</div>
-
-</div>
-</div>
-
-  <div class="card meeet-card">
-
-<div class="meeet-wrap">
-
-<img src="varkenshaasmedaillons-31maart.jpg" alt="Varkenshaasmedaillons">
-
-<div class="meeet-text">
-
-<span class="date-label">31 MAART</span>
-
-<h3>Varkenshaasmedaillons</h3>
-
-<p>
-Varkenshaasmedaillons met champignonroomsaus.<br>
-Friet en salade.<br>
-Vanille ijs met slagroom.<br>
-Koffie of thee.
-</p>
-
-<strong>€9,50 PER PERSOON</strong>
-
-</div>
-
-</div>
-</div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section id="wedstrijden" class="section">
     <div class="container two-col">
