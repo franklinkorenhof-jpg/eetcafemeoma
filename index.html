@@ -611,34 +611,38 @@ max-width:260px;
   .galerij-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-		  .lightbox {
+		.lightbox {
   display: none;
   position: fixed;
   z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.88);
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
 .lightbox-img {
-  margin: auto;
   display: block;
-  max-width: 90%;
-  max-height: 85%;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
+  position: fixed;
+  top: 18px;
+  right: 28px;
   color: white;
   font-size: 40px;
+  line-height: 1;
   cursor: pointer;
-}
+  z-index: 10000;
 }
 </style>
 </head>
@@ -1176,7 +1180,7 @@ const closeBtn = document.querySelector(".lightbox-close");
 
 document.querySelectorAll(".galerij-grid img").forEach(img => {
   img.addEventListener("click", () => {
-    lightbox.style.display = "block";
+    lightbox.style.display = "flex";
     lightboxImg.src = img.src;
   });
 });
