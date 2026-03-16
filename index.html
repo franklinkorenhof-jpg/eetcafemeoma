@@ -1163,6 +1163,34 @@ max-width:260px;
 
 
   </footer>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+</div>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".galerij-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "block";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.onclick = function() {
+  lightbox.style.display = "none";
+}
+
+lightbox.onclick = function(e) {
+  if (e.target !== lightboxImg) {
+    lightbox.style.display = "none";
+  }
+}
+</script>
 		<script>
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
