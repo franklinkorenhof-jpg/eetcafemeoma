@@ -489,7 +489,34 @@ color:#3d2b1f;
 .event-card img{
 margin-bottom:15px;
 }
+/* MEE-EET BLOK MET FOTO NAAST TEKST */
 
+.meeet-wrap{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.meeet-wrap img{
+width:160px;
+border-radius:12px;
+}
+
+.meeet-text{
+flex:1;
+}
+
+@media(max-width:700px){
+.meeet-wrap{
+flex-direction:column;
+text-align:center;
+}
+
+.meeet-wrap img{
+width:100%;
+max-width:260px;
+}
+}
 </style>
 </head>
 <body>
@@ -763,9 +790,13 @@ margin-bottom:15px;
 
         <div class="cards">
 
-<div class="card">
+<div class="card meeet-card">
 
-<img src="spaghetti-19maart.jpg" style="width:100%; border-radius:12px; margin-bottom:15px;" alt="Spaghetti Bolognese">
+<div class="meeet-wrap">
+
+<img src="spaghetti-19maart.jpg" alt="Spaghetti Bolognese">
+
+<div class="meeet-text">
 
 <span class="date-label">19 MAART</span>
 
@@ -779,6 +810,9 @@ Koffie of thee.
 
 <strong>€7,00 PER PERSOON</strong>
 
+</div>
+
+</div>
 </div>
 
   <div class="card">
