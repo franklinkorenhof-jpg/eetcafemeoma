@@ -517,11 +517,12 @@
     }
 
     .meeet-item img{
-      width:180px;
-      height:auto;
-      border-radius:14px;
-      flex-shrink:0;
-    }
+  width:180px;
+  height:130px;
+  object-fit:cover;
+  border-radius:14px;
+  flex-shrink:0;
+}
 
     .meeet-info{
       flex:1;
@@ -559,16 +560,17 @@
       color:#9c4f2f;
     }
 
-    @media(max-width:700px){
-      .meeet-item{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+   @media (max-width:768px){
+  .meeet-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
-      .meeet-item img{
-        width:100%;
-        max-width:280px;
-      }
+  .meeet-item img{
+    width:100%;
+    height:200px;
+  }
+}
 
       .meeet-info h3{
         font-size:28px;
