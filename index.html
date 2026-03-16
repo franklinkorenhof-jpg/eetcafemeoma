@@ -595,17 +595,22 @@ max-width:260px;
 }
 	  .galerij-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
 
 .galerij-grid img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
+}
+	  @media (max-width: 768px) {
+  .galerij-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
 </head>
