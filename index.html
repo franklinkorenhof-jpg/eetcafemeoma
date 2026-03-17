@@ -357,24 +357,78 @@
     }
 
     .about{
-      background:var(--brown);
-      color:white;
-      border-top:1px solid #d8c7b3;
-      border-bottom:1px solid #d8c7b3;
-    }
-    .about p{color:rgba(255,255,255,.84); font-size:19px}
-    .about-badges{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    .badge{
-      background:rgba(255,255,255,.1);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:22px;
-      padding:18px;
-      font-size:18px;
-    }
+  background:#f2e7da;
+  color:#3d271f;
+  border-top:1px solid #d8c7b3;
+  border-bottom:1px solid #d8c7b3;
+}
+
+.about h2{
+  color:#4b2d1f;
+}
+
+.about p{
+  color:#4f3a2f;
+  font-size:19px;
+}
+
+.about .eyebrow{
+  color:#fff7ef;
+  background:#9c4f2f;
+}
+
+.about-badges{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.badge{
+  position:relative;
+  min-height:160px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  border-radius:22px;
+  padding:18px;
+  font-size:18px;
+  font-weight:700;
+  color:#ffffff;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+.badge::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(61,39,31,.42);
+}
+
+.badge{
+  position:relative;
+  z-index:1;
+}
+
+.badge:nth-child(1){
+  background-image:url("images/website/bruincafe.jpg");
+}
+
+.badge:nth-child(2){
+  background-image:url("images/website/gezelligheid.jpg");
+}
+
+.badge:nth-child(3){
+  background-image:url("images/website/feyenoord.jpg");
+}
+
+.badge:nth-child(4){
+  background-image:url("images/website/feesten.jpg");
+}
 
     .contact-grid{
       display:grid;
