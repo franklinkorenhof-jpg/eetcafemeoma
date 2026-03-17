@@ -940,9 +940,44 @@
     #evenementen .about-badges .glass h4{
   color:#3d271f !important;
 }
+    /* ====== LOPENDE BANNER ====== */
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  background: #4d3428;   /* past bij je site */
+  color: #fff;
+  padding: 8px 0;
+  font-weight:700;
+  font-size:16px;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* mobiel iets rustiger */
+@media(max-width:768px){
+  .ticker-content{
+    animation: ticker-scroll 28s linear infinite;
+  }
+}
   </style>
 </head>
 <body>
+
+  <div class="ticker">
+    <div class="ticker-content">
+      🔥 Zondag 22 maart Feyenoord-Ajax • Aanbieding: Broodje Bal met saus naar keuze €5,00 • OP=OP 🔥
+    </div>
+  </div>
+
   <header>
     <div class="container header-inner">
       <div class="brand">
