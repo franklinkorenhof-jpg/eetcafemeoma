@@ -387,26 +387,22 @@
   position:relative;
   min-height:160px;
   display:flex;
-  align-items:flex-start;
+  align-items:flex-end;
   justify-content:flex-start;
   border-radius:22px;
   padding:18px;
   font-size:18px;
-  font-weight:700;
+  font-weight:800;
   color:#ffffff;
   overflow:hidden;
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
+  text-shadow:0 2px 6px rgba(0,0,0,.7);
 }
 
 .badge::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(61,39,31,.55);
+  background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.25));
 }
 
 .badge{
@@ -428,6 +424,10 @@
 
 .badge:nth-child(4){
   background-image:url("images/website/feesten.jpg");
+}
+
+    .badge:nth-child(3)::before{
+  background:linear-gradient(to top, rgba(0,0,0,.78), rgba(0,0,0,.35));
 }
 
     .contact-grid{
