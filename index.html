@@ -691,6 +691,221 @@
   color:#4b2d1f !important;
   font-weight:800;
 }
+
+    @media (max-width: 768px){
+
+  html, body{
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:min(100%, calc(100% - 24px));
+  }
+
+  .header-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:12px 0;
+  }
+
+  .brand{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .brand img{
+    width:56px;
+    height:56px;
+    object-fit:cover;
+    flex-shrink:0;
+  }
+
+  .brand-title{
+    font-size:18px;
+    line-height:1.2;
+    margin:0;
+  }
+
+  .brand-sub{
+    font-size:12px;
+    line-height:1.35;
+    margin:2px 0 0 0;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    background-position:center;
+  }
+
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:36px 0;
+  }
+
+  .pill{
+    font-size:12px;
+    line-height:1.4;
+    padding:7px 12px;
+    margin-bottom:14px;
+  }
+
+  h1{
+    font-size:34px !important;
+    line-height:1.08;
+    margin:0 0 14px 0;
+    word-break:break-word;
+  }
+
+  .hero p.lead{
+    font-size:18px;
+    line-height:1.45;
+    max-width:100%;
+    margin:0 0 20px 0;
+  }
+
+  .btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+    padding:14px 16px;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .glass{
+    padding:18px;
+    border-radius:22px;
+  }
+
+  .glass h3,
+  .glass h4{
+    font-size:13px;
+    line-height:1.35;
+  }
+
+  .glass p{
+    font-size:20px !important;
+    line-height:1.25;
+    word-break:break-word;
+  }
+
+  .glass small{
+    font-size:14px;
+    line-height:1.45;
+  }
+
+  .section{
+    padding:48px 0;
+  }
+
+  .soft,
+  .open-card,
+  .contact-card,
+  .why-card,
+  .menu-card{
+    padding:22px;
+    border-radius:24px;
+  }
+
+  .section-title h2,
+  .soft h2,
+  .open-card h2,
+  .contact-card h2,
+  .why-card h2{
+    font-size:30px !important;
+    line-height:1.12;
+  }
+
+  .highlights,
+  .menu-grid,
+  .menu-columns,
+  .two-col,
+  .contact-grid,
+  .info-grid,
+  .about-badges{
+    grid-template-columns:1fr !important;
+  }
+
+  .highlight{
+    padding:14px;
+    font-size:16px;
+  }
+
+  .menu-row{
+    font-size:17px;
+    gap:10px;
+  }
+
+  .open-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+    font-size:16px !important;
+  }
+
+  .meeet-item{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:18px;
+  }
+
+  .meeet-item img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .meeet-info h3{
+    font-size:26px;
+    line-height:1.15;
+  }
+
+  .meeet-info p{
+    font-size:17px;
+  }
+
+  .meeet-prijs{
+    font-size:22px;
+  }
+
+  .galerij-grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .galerij-grid img{
+    height:150px;
+  }
+
+  iframe{
+    height:320px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:10px;
+    font-size:14px;
+  }
+}
 }
   </style>
 </head>
