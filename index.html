@@ -729,9 +729,8 @@
     }
 
     .meeet-item{
-  display:grid;
-  grid-template-columns: 180px 1fr 180px;
-  gap:20px;
+  display:flex;
+  gap:22px;
   align-items:center;
   background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
   border:1px solid #d9c3ad;
@@ -739,15 +738,18 @@
   padding:20px 24px;
   box-shadow:0 8px 20px rgba(60,35,20,.08);
 }
-    .meeet-item img{
-      width:180px;
-      height:auto;
-      border-radius:14px;
-      flex-shrink:0;
-    }
+    .meeet-item > img,
+.dj-img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  flex-shrink:0;
+}
 
     .meeet-info{
       flex:1;
+      min-width:0;
     }
 
     .meeet-datum{
@@ -783,20 +785,22 @@
     }
 
     @media(max-width:700px){
-      .meeet-item{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+  .meeet-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
-      .meeet-item img{
-        width:100%;
-        max-width:280px;
-      }
+  .meeet-item > img,
+  .dj-img{
+    width:100%;
+    max-width:280px;
+    height:auto;
+  }
 
-      .meeet-info h3{
-        font-size:28px;
-      }
-    }
+  .meeet-info h3{
+    font-size:28px;
+  }
+}
 
     .galerij-grid {
       display: grid;
@@ -1177,37 +1181,50 @@
   padding-bottom: 0;
 }
 
-      .event-images{
-  display:flex;
-  gap:14px;
+#evenementen .meeet-item{
+  max-width:900px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:180px 1fr 180px;
+  gap:20px;
+  align-items:center;
 }
 
-.event-images img{
+#evenementen .meeet-item > img,
+#evenementen .dj-img{
   width:180px;
-  height:120px;
+  height:180px;
   object-fit:cover;
   border-radius:14px;
 }
 
-      @media(max-width:700px){
-  .event-images{
-    flex-direction:column;
+#evenementen .meeet-info h3{
+  margin:0 0 12px 0;
+  color:#4b2d1f;
+  font-size:34px;
+  line-height:1.15;
+}
+
+#evenementen .meeet-info p{
+  margin:0;
+  font-size:18px;
+  line-height:1.6;
+  color:#5b4638;
+}
+
+@media (max-width:700px){
+  #evenementen .meeet-item{
+    grid-template-columns:1fr;
   }
 
-  .event-images img{
+  #evenementen .meeet-item > img,
+  #evenementen .dj-img{
     width:100%;
     max-width:280px;
+    height:auto;
   }
 }
 
-      .dj-img{
-  width:180px;
-  height:120px;
-  object-fit:cover;
-  border-radius:14px;
-}
-
-    
   </style>
  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-53EB6CBDL0"></script>
@@ -1728,38 +1745,36 @@
         </div>
 
         <div class="meeet-item" data-date="2026-05-02">
+  <img src="images/events/backtothe90's.jpg" alt="Disco Back to the 90's" loading="lazy">
 
-  <div class="event-images">
-   <img src="images/events/backtothe90's.jpg" alt="Disco Back to the 90's">
+  <div class="meeet-info">
+    <div class="meeet-datum">2 mei</div>
+    <h3>Disco Back to the 90's</h3>
+    <p>
+      Een gezellige feestavond vol herkenbare 90's hits,<br>
+      sfeer en gezelligheid bij Eetcafé Me Oma.
+    </p>
+  </div>
 
-<div class="meeet-info">
-  <div class="meeet-datum">2 mei</div>
-  <h3>Disco Back to the 90's</h3>
-  <p>
-    Een gezellige feestavond vol herkenbare 90's hits,<br>
-    sfeer en gezelligheid bij Eetcafé Me Oma.
-  </p>
+  <img class="dj-img" src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound" loading="lazy">
 </div>
 
-<img class="dj-img" src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound">
+<div class="meeet-item" data-date="2026-05-30">
+  <img src="images/events/foute-party.jpg" alt="Disco Foute Avond" loading="lazy">
 
-        <div class="meeet-item" data-date="2026-05-30">
+  <div class="meeet-info">
+    <div class="meeet-datum">30 mei</div>
+    <h3>Disco Foute Avond</h3>
+    <p>
+      Een heerlijke foute avond met muziek,<br>
+      gezelligheid en natuurlijk een topsfeer bij Me Oma.
+    </p>
+  </div>
 
-  <div class="event-images">
-   <img src="images/events/foute-party.jpg" alt="Disco Foute Avond">
-
-<div class="meeet-info">
-  <div class="meeet-datum">30 mei</div>
-  <h3>Disco Foute Avond</h3>
-  <p>
-    Een heerlijke foute avond met muziek,<br>
-    gezelligheid en natuurlijk een topsfeer bij Me Oma.
-  </p>
+  <img class="dj-img" src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound" loading="lazy">
 </div>
 
-<img class="dj-img" src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound">
-
-        <div class="about-badges" style="margin-top:24px;">
+<div class="about-badges" style="margin-top:24px;">
           <div class="glass">
             <h4>Feestavonden</h4>
             <p>Regelmatig gezellige feestavonden met muziek en onze huis DJ.</p>
@@ -1881,8 +1896,8 @@
     <a href="images/terras/terras1.jpg" class="gallery-item">
       <img src="images/terras/terras1.jpg" alt="Sfeerfoto terras 1">
     </a>
-    <a href="images/terras/terras2.jpg.jpg" class="gallery-item">
-      <img src="images/terras/terras2.jpg.jpg" alt="Sfeerfoto terras 2">
+    <a href="images/terras/terras2.jpg" class="gallery-item">
+      <img src="images/terras/terras2.jpg" alt="Sfeerfoto terras 2">
     </a>
     <a href="images/terras/terras3.jpg" class="gallery-item">
       <img src="images/terras/terras3.jpg" alt="Sfeerfoto terras 3">
@@ -1893,6 +1908,7 @@
   </div>
 </section>
 </div>
+  </section>
 
   <section id="contact" class="section">
     <div class="container contact-grid">
