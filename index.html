@@ -335,47 +335,98 @@
       gap:28px;
     }
     .menu-card{
-      background:var(--paper);
-      color:var(--text);
-      border:1px solid var(--gold);
-      border-radius:32px;
-      padding:32px;
-      box-shadow:0 10px 28px rgba(0,0,0,.12);
+      position:relative;
+      background:linear-gradient(180deg,#fffaf4 0%, #f5e2cf 100%);
+      color:#3d271f;
+      border:1px solid #d6bfa8;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 12px 30px rgba(0,0,0,.15);
+      overflow:hidden;
+    }
+
+    .menu-card::before{
+      content:"";
+      position:absolute;
+      top:14px;
+      left:14px;
+      right:14px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, #c18b63, transparent);
+      opacity:.9;
+    }
+
+    .menu-card::after{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(193,139,99,.22);
+      border-radius:20px;
+      pointer-events:none;
     }
     .menu-card-title{
+      position:relative;
       text-align:center;
-      margin:0 0 24px 0;
-      padding-bottom:14px;
+      margin:0 0 30px 0;
+      padding:10px 0 14px;
       border-bottom:2px solid #b86a3d;
       text-transform:uppercase;
-      font-size:34px;
+      font-size:32px;
+      letter-spacing:3px;
       color:#7f3f23;
     }
     .menu-columns{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:28px;
+      position:relative;
     }
-    .menu-group{margin-bottom:28px}
+
+    .menu-columns::before{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:50%;
+      width:1px;
+      background:linear-gradient(180deg, transparent, rgba(122,68,45,.28), transparent);
+      transform:translateX(-14px);
+    }
+
+    .menu-section .section-title h2{
+      letter-spacing:2px;
+    }
+
+    .menu-section .section-title p{
+      color:#f3d9c1;
+    }
+    .menu-group{
+      margin-bottom:30px;
+      position:relative;
+    }
     .menu-group h4{
-      margin:0 0 12px 0;
-      font-size:21px;
+      margin:0 0 14px 0;
+      font-size:20px;
       text-transform:uppercase;
-      text-decoration:underline;
-      text-underline-offset:6px;
-      text-decoration-color:#b86a3d;
+      letter-spacing:2px;
+      color:#7a442d;
+      border-bottom:1px solid #d6bfa8;
+      padding-bottom:6px;
     }
    .menu-row{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns: 1fr auto;
   align-items:center;
-  gap:14px;
-  padding:3px 0;
-  font-size:21px;
+  gap:10px;
+  padding:6px 0;
+  font-size:20px;
+  border-bottom:1px dotted #d6bfa8;
 }
 
 .menu-row span:first-child{
-  flex:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .menu-row span:last-child{
@@ -589,6 +640,9 @@
       .menu-columns,
       .highlights{
         grid-template-columns:1fr;
+      }
+      .menu-columns::before{
+        display:none;
       }
       h1{font-size:46px}
       .section-title h2,
@@ -1292,7 +1346,7 @@
                 <div class="menu-row"><span>Pitcher</span><span>€ 14,00</span></div>
                 <div class="menu-row"><span>Radler (2%)</span><span>€ 3,25</span></div>
                 <div class="menu-row"><span>Radler (0%)</span><span>€ 3,25</span></div>
-                <div class="menu-row"><span>Heineken 0% (Fles)</span><span>€ 3,25</span></div>
+                <div class="menu-row"><span>Heineken 0% <small style="font-size:.82em;color:#7c6554">(fles)</small></span><span>€ 3,25</span></div>
                 <div class="menu-row"><span>Rose Bier</span><span>€ 3,75</span></div>
               </div>
 
