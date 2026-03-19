@@ -1177,6 +1177,29 @@
   padding-bottom: 0;
 }
 
+      .event-images{
+  display:flex;
+  gap:14px;
+}
+
+.event-images img{
+  width:180px;
+  height:120px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+      @media(max-width:700px){
+  .event-images{
+    flex-direction:column;
+  }
+
+  .event-images img{
+    width:100%;
+    max-width:280px;
+  }
+}
+
     
   </style>
  <!-- Google tag (gtag.js) -->
@@ -1697,10 +1720,14 @@
           </p>
         </div>
 
-        <div class="meeet-item" data-date="2026-05-02" style="max-width:900px; margin:30px auto;">
-          <img src="images/events/backtothe90's.jpg" alt="Disco Back to the 90's" loading="lazy">
+        <div class="meeet-item" data-date="2026-05-02">
 
-          <div class="meeet-info">
+  <div class="event-images">
+    <img src="images/events/backtothe90's.jpg" alt="Disco Back to the 90's">
+    <img src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound">
+  </div>
+
+  <div class="meeet-info">
             <div class="meeet-datum">2 mei</div>
             <h3>Disco Back to the 90's</h3>
 
@@ -1711,9 +1738,12 @@
           </div>
         </div>
 
-        <div class="meeet-item" data-date="2026-05-30" style="max-width:900px; margin:30px auto;">
-          <img src="images/events/foute-party.jpg" alt="Disco Foute Avond" loading="lazy">
+        <div class="meeet-item" data-date="2026-05-30">
 
+  <div class="event-images">
+    <img src="images/events/foute-party.jpg" alt="Disco Foute Avond">
+    <img src="images/events/Sensisound-nieuw.png" alt="DJ Sensisound">
+  </div>
           <div class="meeet-info">
             <div class="meeet-datum">30 mei</div>
             <h3>Disco Foute Avond</h3>
