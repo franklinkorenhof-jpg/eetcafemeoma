@@ -1252,7 +1252,23 @@
     max-width:280px;
     height:auto;
   }
+  
+.bbq-highlight{
+  border:2px solid #d9b79a;
+  background:linear-gradient(180deg,#fff4e5 0%, #f0d7bd 100%);
+  transform:scale(1.02);
+  position:relative;
 }
+
+.bbq-highlight::before{
+  content:"🔥 BBQ SPECIAL 🔥";
+  display:block;
+  font-weight:800;
+  color:#7a442d;
+  margin-bottom:10px;
+  font-size:14px;
+  letter-spacing:.1em;
+}      
 
   </style>
  <!-- Google tag (gtag.js) -->
@@ -1566,7 +1582,7 @@
             </div>
           </div>
 
-          <div class="meeet-item" data-date="2026-07-25">
+          <div class="meeet-item bbq-highlight" data-date="2026-07-25">
             <img src="images/gerechten/Barbecue.jpg" alt="BARBECUE" loading="lazy">
             <div class="meeet-info">
               <div class="meeet-datum">25 juli</div>
