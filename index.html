@@ -1253,60 +1253,67 @@
     height:auto;
   }
 }
+}
 
 
-/* ====== BBQ HIGHLIGHT ====== */
+
+/* ====== BBQ HIGHLIGHT DESKTOP + MOBIEL ====== */
 .bbq-highlight{
-  border:3px solid #9c2f2f !important;
-  background:linear-gradient(135deg,#fff1e0 0%, #f2c197 55%, #e2a56f 100%) !important;
-  transform:scale(1.03);
+  border:4px solid #9c2f2f !important;
+  background:linear-gradient(135deg,#fff3e4 0%, #f6c99c 55%, #e7ab72 100%) !important;
+  transform:scale(1.035);
   position:relative;
-  box-shadow:0 0 28px rgba(156,47,47,0.28), 0 12px 28px rgba(0,0,0,0.16);
+  box-shadow:0 0 0 6px rgba(156,47,47,0.10), 0 18px 36px rgba(0,0,0,0.18);
   overflow:visible;
 }
 
 .bbq-highlight::before{
   content:"🔥 BBQ AVOND 🔥";
   position:absolute;
-  top:-16px;
+  top:-18px;
   left:22px;
   background:#9c2f2f;
   color:#fff;
-  padding:7px 14px;
+  padding:8px 16px;
   font-size:12px;
   font-weight:800;
   border-radius:999px;
   letter-spacing:.12em;
   box-shadow:0 8px 18px rgba(0,0,0,.18);
+  z-index:2;
 }
 
 .bbq-highlight .meeet-datum{
-  background:#7a442d;
-  color:#fff7ef;
+  background:#7a442d !important;
+  color:#fff !important;
 }
 
 .bbq-highlight h3{
   color:#7a1f12 !important;
-  font-size:44px !important;
+  font-size:48px !important;
   letter-spacing:.02em;
+}
+
+.bbq-highlight .meeet-info p{
+  font-size:20px !important;
 }
 
 .bbq-highlight .meeet-prijs{
   color:#9c2f2f !important;
-  font-size:32px !important;
-  font-weight:900;
+  font-size:34px !important;
+  font-weight:900 !important;
   text-shadow:0 1px 0 rgba(255,255,255,.35);
 }
 
 .bbq-highlight strong{
   display:block;
-  background:#9c2f2f;
-  color:#fff;
-  padding:8px 12px;
+  background:#9c2f2f !important;
+  color:#fff !important;
+  padding:10px 14px;
   border-radius:10px;
   margin-top:12px;
   text-align:center;
-  font-size:16px;
+  font-size:17px;
   font-weight:800;
   box-shadow:0 8px 18px rgba(156,47,47,.22);
 }
@@ -1315,27 +1322,18 @@
   .bbq-highlight{
     transform:none;
   }
-
   .bbq-highlight::before{
     top:-14px;
     left:16px;
     font-size:11px;
     padding:6px 12px;
   }
-
   .bbq-highlight h3{
-    font-size:34px !important;
+    font-size:36px !important;
   }
-
   .bbq-highlight .meeet-prijs{
-    font-size:26px !important;
+    font-size:28px !important;
   }
-}
-
-
-#top{
-  position:relative;
-  top:0;
 }
 
 </style>
