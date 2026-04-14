@@ -1252,47 +1252,90 @@
     max-width:280px;
     height:auto;
   }
-  
-
-.bbq-highlight{
-  border:2px solid #c58a5c;
-  background:linear-gradient(180deg,#fff1e0 0%, #e2b48c 100%);
-  transform:scale(1.03);
-  position:relative;
-  box-shadow:0 0 25px rgba(197,138,92,0.7);
 }
 
-/* 🔥 label bovenaan */
+
+/* ====== BBQ HIGHLIGHT ====== */
+.bbq-highlight{
+  border:3px solid #9c2f2f !important;
+  background:linear-gradient(135deg,#fff1e0 0%, #f2c197 55%, #e2a56f 100%) !important;
+  transform:scale(1.03);
+  position:relative;
+  box-shadow:0 0 28px rgba(156,47,47,0.28), 0 12px 28px rgba(0,0,0,0.16);
+  overflow:visible;
+}
+
 .bbq-highlight::before{
   content:"🔥 BBQ AVOND 🔥";
   position:absolute;
-  top:-12px;
-  left:20px;
+  top:-16px;
+  left:22px;
   background:#9c2f2f;
   color:#fff;
-  padding:5px 12px;
+  padding:7px 14px;
   font-size:12px;
   font-weight:800;
-  border-radius:6px;
-  letter-spacing:.1em;
+  border-radius:999px;
+  letter-spacing:.12em;
+  box-shadow:0 8px 18px rgba(0,0,0,.18);
 }
 
-/* prijs extra dik en opvallend */
+.bbq-highlight .meeet-datum{
+  background:#7a442d;
+  color:#fff7ef;
+}
+
+.bbq-highlight h3{
+  color:#7a1f12 !important;
+  font-size:44px !important;
+  letter-spacing:.02em;
+}
+
 .bbq-highlight .meeet-prijs{
-  color:#8d2f14;
-  font-size:22px;
+  color:#9c2f2f !important;
+  font-size:32px !important;
   font-weight:900;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
 }
 
-/* waarschuwing echt laten knallen */
 .bbq-highlight strong{
   display:block;
   background:#9c2f2f;
   color:#fff;
-  padding:6px;
-  border-radius:4px;
-  margin-top:10px;
+  padding:8px 12px;
+  border-radius:10px;
+  margin-top:12px;
   text-align:center;
+  font-size:16px;
+  font-weight:800;
+  box-shadow:0 8px 18px rgba(156,47,47,.22);
+}
+
+@media (max-width:700px){
+  .bbq-highlight{
+    transform:none;
+  }
+
+  .bbq-highlight::before{
+    top:-14px;
+    left:16px;
+    font-size:11px;
+    padding:6px 12px;
+  }
+
+  .bbq-highlight h3{
+    font-size:34px !important;
+  }
+
+  .bbq-highlight .meeet-prijs{
+    font-size:26px !important;
+  }
+}
+
+
+#top{
+  position:relative;
+  top:0;
 }
 
 </style>
@@ -1307,6 +1350,7 @@
 </script>
 </head>
 <body>
+  <div id="top"></div>
 
   <div class="ticker">
     <div class="ticker-content">
@@ -1329,7 +1373,7 @@
     </button>
 
     <nav id="siteNav">
-      <a href="#home">Home</a>
+      <a href="#top">Home</a>
       <a href="#mee-eet">Mee-eet avonden</a>
       <a href="#evenementen">Evenementen</a>
       <a href="#wedstrijden">Wedstrijden</a>
