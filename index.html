@@ -1255,29 +1255,44 @@
   
 
 .bbq-highlight{
-  border:2px solid #d9b79a !important;
-  background:linear-gradient(180deg,#fff4e5 0%, #f0d7bd 100%) !important;
-  transform:scale(1.02);
+  border:2px solid #c58a5c;
+  background:linear-gradient(180deg,#fff1e0 0%, #e2b48c 100%);
+  transform:scale(1.03);
   position:relative;
-  box-shadow:0 0 20px rgba(217,183,154,0.5);
+  box-shadow:0 0 25px rgba(197,138,92,0.7);
 }
 
+/* 🔥 label bovenaan */
 .bbq-highlight::before{
-  content:"🔥 BBQ SPECIAL 🔥";
-  display:block;
+  content:"🔥 BBQ AVOND 🔥";
+  position:absolute;
+  top:-12px;
+  left:20px;
+  background:#9c2f2f;
+  color:#fff;
+  padding:5px 12px;
+  font-size:12px;
   font-weight:800;
-  color:#7a442d;
-  margin-bottom:10px;
-  font-size:14px;
+  border-radius:6px;
   letter-spacing:.1em;
 }
 
+/* prijs extra dik en opvallend */
 .bbq-highlight .meeet-prijs{
   color:#8d2f14;
+  font-size:22px;
+  font-weight:900;
 }
 
-.bbq-highlight .meeet-info p strong{
-  color:#9c2f2f;
+/* waarschuwing echt laten knallen */
+.bbq-highlight strong{
+  display:block;
+  background:#9c2f2f;
+  color:#fff;
+  padding:6px;
+  border-radius:4px;
+  margin-top:10px;
+  text-align:center;
 }
 
 </style>
