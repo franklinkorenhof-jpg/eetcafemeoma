@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- WEBSITEVERSIE: 2026-08-01-WEDSTRIJDEN-KAARTEN-V2 -->
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="site-version" content="2026-08-01-wedstrijden-kaarten-v2">
   <title>Eetcafé Me Oma Rotterdam | Feyenoord café, live voetbal, terras & snacks</title>
   <meta name="description" content="Eetcafé Me Oma is een gezellig bruin café in Rotterdam Zuid met terras. Kijk live Feyenoord en andere voetbalwedstrijden, geniet van drankjes, snacks, mee-eet avonden en evenementen. Snacks ook af te halen. Alleen contante betaling.">
   <link rel="canonical" href="https://www.eetcafemeoma.nl/">
@@ -89,22 +91,6 @@
     img{max-width:100%;display:block}
     .container{width:min(1200px, calc(100% - 32px)); margin:0 auto}
     .section{padding:70px 0}
-    .card{
-      background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
-      border:1px solid #d9c3ad;
-      border-radius:22px;
-      padding:24px 28px;
-      box-shadow:0 8px 20px rgba(60,35,20,.08);
-    }
-
-    .mee-eet .card h3{color:#4b2d1f;}
-    .mee-eet .card strong{
-      color:#7a442d;
-      font-size:15px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
     header{
       position:sticky;
       top:0;
@@ -475,35 +461,6 @@
       padding-right:28px;
     }
 
-    .mee-list{
-      display:grid;
-      gap:18px;
-      margin-top:24px;
-    }
-    .mee-item{
-      background:linear-gradient(180deg,#f8efe6 0%, #efe1d2 100%);
-      border:1px solid #d9c3ad;
-      border-radius:22px;
-      padding:24px 28px;
-      display:grid;
-      grid-template-columns:1fr 1fr auto;
-      gap:16px;
-      align-items:start;
-      box-shadow:0 8px 20px rgba(60,35,20,.08);
-    }
-
-    .mee-item strong{
-      color:#7a442d;
-      font-size:15px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .mee-item:last-child,
-    .mee-item div:last-child{
-      font-weight:700;
-    }
-
     .two-col{
       display:grid;
       grid-template-columns:1.2fr .8fr;
@@ -578,6 +535,7 @@
 
     .badge{
       position:relative;
+      isolation:isolate;
       min-height:160px;
       display:flex;
       align-items:flex-end;
@@ -595,12 +553,11 @@
     }
 
     .badge::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
       background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.25));
-    }
-
-    .badge{
-      position:relative;
-      z-index:1;
     }
 
     .badge:nth-child(1){
@@ -663,7 +620,6 @@
     }
 
     @media (max-width: 980px){
-      nav{display:none}
       .hero-inner,
       .menu-grid,
       .two-col,
@@ -678,7 +634,6 @@
       h1{font-size:46px}
       .section-title h2,
       .soft h2,.open-card h2,.contact-card h2,.why-card h2{font-size:34px}
-      .mee-item{grid-template-columns:1fr}
       .footer-inner{flex-direction:column}
     }
 
@@ -845,12 +800,6 @@
       border-radius: 12px;
       display: block;
       cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .galerij-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     .lightbox {
@@ -1178,82 +1127,74 @@
   text-decoration: underline;
 }
     @media (max-width: 980px){
-  header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-  }
+      header{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:9999;
+      }
 
-  body{
-    padding-top: 90px;
-  }
+      body{
+        padding-top:90px;
+      }
 
-  section{
-    scroll-margin-top: 110px;
-  }
-      .container .soft{
-  margin-bottom: 0;
-}
+      section{
+        scroll-margin-top:110px;
+      }
+    }
 
-#fotogalerij .container + .container{
-  margin-top: 0 !important;
-}
+    #fotogalerij{
+      padding-bottom:0;
+    }
 
-#fotogalerij .soft{
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
+    #fotogalerij .soft + .soft{
+      margin-top:24px;
+    }
 
-#fotogalerij{
-  padding-bottom: 0;
-}
+    #evenementen .meeet-item{
+      max-width:900px;
+      margin:30px auto;
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr) 180px;
+      gap:20px;
+      align-items:center;
+    }
 
-#evenementen .meeet-item{
-  max-width:900px;
-  margin:30px auto;
-  display:grid;
-  grid-template-columns:180px 1fr 180px;
-  gap:20px;
-  align-items:center;
-}
+    #evenementen .meeet-item > img,
+    #evenementen .dj-img{
+      width:180px;
+      height:180px;
+      object-fit:cover;
+      border-radius:14px;
+    }
 
-#evenementen .meeet-item > img,
-#evenementen .dj-img{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:14px;
-}
+    #evenementen .meeet-info h3{
+      margin:0 0 12px 0;
+      color:#4b2d1f;
+      font-size:34px;
+      line-height:1.15;
+    }
 
-#evenementen .meeet-info h3{
-  margin:0 0 12px 0;
-  color:#4b2d1f;
-  font-size:34px;
-  line-height:1.15;
-}
+    #evenementen .meeet-info p{
+      margin:0;
+      font-size:18px;
+      line-height:1.6;
+      color:#5b4638;
+    }
 
-#evenementen .meeet-info p{
-  margin:0;
-  font-size:18px;
-  line-height:1.6;
-  color:#5b4638;
-}
+    @media (max-width:700px){
+      #evenementen .meeet-item{
+        grid-template-columns:1fr;
+      }
 
-@media (max-width:700px){
-  #evenementen .meeet-item{
-    grid-template-columns:1fr;
-  }
-
-  #evenementen .meeet-item > img,
-  #evenementen .dj-img{
-    width:100%;
-    max-width:280px;
-    height:auto;
-  }
-}
-}
+      #evenementen .meeet-item > img,
+      #evenementen .dj-img{
+        width:100%;
+        max-width:280px;
+        height:auto;
+      }
+    }
 
 
 
@@ -1349,6 +1290,174 @@
     font-size:28px !important;
   }
 }
+
+
+    /* ====== AANKOMENDE WEDSTRIJDEN ====== */
+    .wedstrijden-blok{
+      margin-top:24px;
+      background:rgba(255,255,255,.58);
+      border:1px solid #dfcbb8;
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 10px 24px rgba(60,35,20,.08);
+    }
+
+    .wedstrijden-blok h3{
+      margin:0 0 18px;
+      color:#4b2d1f;
+      font-size:28px;
+      line-height:1.2;
+    }
+
+    .wedstrijden-lijst{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:14px;
+    }
+
+    .wedstrijd-item{
+      position:relative;
+      display:grid;
+      grid-template-columns:76px minmax(0,1fr);
+      align-items:center;
+      gap:16px;
+      min-height:92px;
+      padding:14px 18px 14px 14px;
+      background:linear-gradient(135deg,#fffaf5 0%,#f6e8da 100%);
+      border:1px solid #e2cdb9;
+      border-left:5px solid #9c4f2f;
+      border-radius:16px;
+      box-shadow:0 5px 14px rgba(60,35,20,.07);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .wedstrijd-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(60,35,20,.12);
+      border-color:#c89b79;
+    }
+
+    .wedstrijd-item.eerstvolgende{
+      border-color:#b86a3d;
+      box-shadow:0 10px 24px rgba(156,79,47,.16);
+    }
+
+    .wedstrijd-item.eerstvolgende::after{
+      content:"Eerstvolgende";
+      position:absolute;
+      top:-10px;
+      right:14px;
+      background:#7a442d;
+      color:#fff;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .wedstrijd-datum{
+      display:flex;
+      min-height:64px;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      background:#9c4f2f;
+      color:#fff;
+      border-radius:12px;
+      text-align:center;
+      line-height:1;
+      box-shadow:inset 0 -3px 0 rgba(0,0,0,.12);
+    }
+
+    .wedstrijd-datum .dag{
+      display:block;
+      font-size:26px;
+      font-weight:800;
+    }
+
+    .wedstrijd-datum .maand{
+      display:block;
+      margin-top:5px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .wedstrijd-info{
+      min-width:0;
+    }
+
+    .wedstrijd-info strong{
+      display:block;
+      margin-bottom:5px;
+      color:#3d271f;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .wedstrijd-info time{
+      display:block;
+      color:#6f5b4e;
+      font-size:16px;
+      line-height:1.45;
+    }
+
+    #geen-wedstrijden{
+      margin:0;
+      padding:16px;
+      background:#fffaf5;
+      border:1px dashed #cda98b;
+      border-radius:14px;
+      color:#6f5b4e;
+      font-style:italic;
+    }
+
+    @media (max-width:640px){
+      .wedstrijden-blok{
+        padding:18px;
+      }
+
+      .wedstrijd-item{
+        grid-template-columns:62px minmax(0,1fr);
+        gap:12px;
+        padding:12px;
+      }
+
+      .wedstrijd-datum{
+        min-height:60px;
+      }
+
+      .wedstrijd-datum .dag{
+        font-size:23px;
+      }
+
+      .wedstrijd-info strong{
+        font-size:17px;
+      }
+
+      .wedstrijd-info time{
+        font-size:14px;
+      }
+
+      .wedstrijd-item.eerstvolgende::after{
+        right:10px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .wedstrijd-item{
+        transition:none;
+      }
+
+      .wedstrijd-item:hover{
+        transform:none;
+      }
+    }
 
 </style>
  <!-- Google tag (gtag.js) -->
@@ -1458,7 +1567,7 @@
         <div class="glass">
           <h4>Geopend</h4>
           <p>Dinsdag, donderdag, vrijdag en zaterdag</p>
-          <small>Zondag alleen bij thuis wedstrijden van Feyenoord.(check de socials voor actuele openingstijden)</small>
+          <small>Zondag alleen bij thuis wedstrijden van Feyenoord. (Check de socials voor actuele openingstijden)</small>
         </div>
       </div>
     </div>
@@ -1711,7 +1820,7 @@
           <div class="meeet-item bbq-highlight" data-date="2026-08-29">
             <img src="images/gerechten/Barbecue.jpg" alt="BARBECUE" loading="lazy">
             <div class="meeet-info">
-              <div class="meeet-datum">25 juli</div>
+              <div class="meeet-datum">29 augustus</div>
               <h3>BARBEQUE</h3>
               <p>
                 Diverse soorten vlees, salades, sausjes en stokbrood met kruidenboter.<br>
@@ -1824,105 +1933,122 @@
   </section>
 
 <section id="wedstrijden" class="section">
-  <div class="container two-col">
-
-    <div class="soft">
-      <p class="eyebrow" style="color:#9c4f2f">Wedstrijden & feesten</p>
-      <h2>Voetbal kijken en samen genieten</h2>
-
-      <div class="wedstrijden-blok">
-        <h3>Aankomende wedstrijden</h3>
-
-        <ul class="wedstrijden-lijst" id="wedstrijden-lijst">
-
-          <li class="wedstrijd-item" data-date="2026-08-02">
-            <strong>Feyenoord - Atalanta Bergamo</strong><br>
-            Zondag 2 augustus 2026, 15:00 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-08-16">
-            <strong>Feyenoord - Go Ahead Eagles</strong><br>
-            Zondag 16 augustus 2026, 14:30 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-08-30">
-            <strong>Feyenoord - ADO Den Haag</strong><br>
-            Zondag 30 augustus 2026, 14:30 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-09-20">
-            <strong>Feyenoord - FC Utrecht</strong><br>
-            Zondag 20 september 2026, 12:15 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-10-10">
-            <strong>Feyenoord - AZ</strong><br>
-            Zaterdag 10 oktober 2026, 18:45 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-10-31">
-            <strong>Feyenoord - Fortuna Sittard</strong><br>
-            Zaterdag 31 oktober 2026, 16:30 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-11-22">
-            <strong>Feyenoord - Excelsior</strong><br>
-            Zondag 22 november 2026, 14:30 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-11-29">
-            <strong>Feyenoord - Ajax</strong><br>
-            Zondag 29 november 2026, 14:30 uur
-          </li>
-
-          <li class="wedstrijd-item" data-date="2026-12-20">
-            <strong>Feyenoord - FC Twente</strong><br>
-            Zondag 20 december 2026, 14:30 uur
-          </li>
-
-        </ul>
-
-        <p id="geen-wedstrijden" style="display:none;">
-          Nieuwe wedstrijden worden binnenkort bekendgemaakt.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const wedstrijdenLijst = document.getElementById("wedstrijden-lijst");
-  const wedstrijden = document.querySelectorAll(".wedstrijd-item");
-  const geenWedstrijden = document.getElementById("geen-wedstrijden");
-
-  const vandaag = new Date();
-
-  const jaar = vandaag.getFullYear();
-  const maand = String(vandaag.getMonth() + 1).padStart(2, "0");
-  const dag = String(vandaag.getDate()).padStart(2, "0");
-
-  const datumVandaag = `${jaar}-${maand}-${dag}`;
-
-  wedstrijden.forEach(function (wedstrijd) {
-    const wedstrijddatum = wedstrijd.dataset.date;
-
-    if (wedstrijddatum < datumVandaag) {
-      wedstrijd.remove();
-    }
-  });
-
-  if (wedstrijdenLijst.children.length === 0) {
-    wedstrijdenLijst.style.display = "none";
-    geenWedstrijden.style.display = "block";
-  }
-});
-</script>
-
+    <div class="container two-col">
+      <div class="soft">
+        <p class="eyebrow" style="color:#9c4f2f">Wedstrijden &amp; feesten</p>
+        <h2>Voetbal kijken en samen genieten</h2>
         <p>
-          Alle wedstrijden van Feyenoord zijn te zien op groot scherm. Daarnaast is Eetcafé Me Oma ook uw adres voor feesten en partijen in een warme en gezellige setting.
+          Alle thuiswedstrijden van Feyenoord zijn te zien op groot scherm. Beleef de wedstrijd samen in een warme, echte Rotterdamse cafésfeer.
         </p>
+
+        <div class="wedstrijden-blok">
+          <h3>Aankomende thuiswedstrijden</h3>
+
+          <ul class="wedstrijden-lijst" id="wedstrijden-lijst">
+            <li class="wedstrijd-item" data-date="2026-08-02">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">02</span>
+                <span class="maand">aug</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - Atalanta Bergamo</strong>
+                <time datetime="2026-08-02T15:00">Zondag 2 augustus 2026 • 15:00 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-08-16">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">16</span>
+                <span class="maand">aug</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - Go Ahead Eagles</strong>
+                <time datetime="2026-08-16T14:30">Zondag 16 augustus 2026 • 14:30 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-08-30">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">30</span>
+                <span class="maand">aug</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - ADO Den Haag</strong>
+                <time datetime="2026-08-30T14:30">Zondag 30 augustus 2026 • 14:30 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-09-20">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">20</span>
+                <span class="maand">sep</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - FC Utrecht</strong>
+                <time datetime="2026-09-20T12:15">Zondag 20 september 2026 • 12:15 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-10-10">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">10</span>
+                <span class="maand">okt</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - AZ</strong>
+                <time datetime="2026-10-10T18:45">Zaterdag 10 oktober 2026 • 18:45 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-10-31">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">31</span>
+                <span class="maand">okt</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - Fortuna Sittard</strong>
+                <time datetime="2026-10-31T16:30">Zaterdag 31 oktober 2026 • 16:30 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-11-22">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">22</span>
+                <span class="maand">nov</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - Excelsior</strong>
+                <time datetime="2026-11-22T14:30">Zondag 22 november 2026 • 14:30 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-11-29">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">29</span>
+                <span class="maand">nov</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - Ajax</strong>
+                <time datetime="2026-11-29T14:30">Zondag 29 november 2026 • 14:30 uur</time>
+              </div>
+            </li>
+
+            <li class="wedstrijd-item" data-date="2026-12-20">
+              <div class="wedstrijd-datum" aria-hidden="true">
+                <span class="dag">20</span>
+                <span class="maand">dec</span>
+              </div>
+              <div class="wedstrijd-info">
+                <strong>Feyenoord - FC Twente</strong>
+                <time datetime="2026-12-20T14:30">Zondag 20 december 2026 • 14:30 uur</time>
+              </div>
+            </li>
+          </ul>
+
+          <p id="geen-wedstrijden" style="display:none" aria-live="polite">
+            Nieuwe thuiswedstrijden worden binnenkort bekendgemaakt.
+          </p>
+        </div>
 
         <div class="info-grid">
           <div class="mini">
@@ -1931,7 +2057,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div style="color:#6f5b4e;margin-top:6px">Beleef iedere wedstrijd in echte Rotterdamse sfeer.</div>
           </div>
           <div class="mini">
-            <div style="color:#9c4f2f;font-size:14px">Feesten & partijen</div>
+            <div style="color:#9c4f2f;font-size:14px">Feesten &amp; partijen</div>
             <strong>Informeer naar de mogelijkheden</strong>
             <div style="color:#6f5b4e;margin-top:6px">Geschikt voor gezellige bijeenkomsten en besloten momenten.</div>
           </div>
@@ -1947,15 +2073,13 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="open-row"><span>Donderdag</span><span>14:00 – 23:00</span></div>
           <div class="open-row"><span>Vrijdag</span><span>14:00 – 00:00</span></div>
           <div class="open-row"><span>Zaterdag</span><span>14:00 – 00:00</span></div>
-          <div class="open-row"><span>Zondag</span><span>Alleen geopend als Feyenoord thuis speelt. (Zie de socials voor actuele openingstijden.)</span></div>
+          <div class="open-row"><span>Zondag</span><span>Alleen geopend als Feyenoord thuis speelt. Zie de socials voor actuele openingstijden.</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  
-
-<section id="menu" class="section menu-section">
+  <section id="menu" class="section menu-section">
     <div class="container">
       <div class="section-title">
         <p class="eyebrow">Menukaart</p>
@@ -2162,10 +2286,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="eyebrow">Over ons</p>
         <h2 style="margin:0;font-size:42px;line-height:1.1">Een echt Rotterdams café met sfeer</h2>
         <p>
-          Eetcafé Me Oma is het gezelligste bruine café van Rotterdam Zuid sinds 2010. Een plek waar mensen samenkomen voor een drankje, een praatje, een voetbalwedstrijd en een ontspannen sfeer.Ook kunt u bij ons lekker buiten zitten op ons aangename terras.
+          Eetcafé Me Oma is het gezelligste bruine café van Rotterdam Zuid sinds 2010. Een plek waar mensen samenkomen voor een drankje, een praatje, een voetbalwedstrijd en een ontspannen sfeer. Ook kunt u bij ons lekker buiten zitten op ons aangename terras.
         </p>
         <p>
-          Of u nu langskomt voor een gezellige middag, een avond met Feyenoord op groot scherm of een feestelijke gelegenheid: bij Me Oma staat gastvrijheid altijd centraal.Wij kunnen feesten en partijen organiseren voor zo'n beetje elke gelegenheid en elk budget.Informeer naar de mogelijkheden hiervoor.
+          Of u nu langskomt voor een gezellige middag, een avond met Feyenoord op groot scherm of een feestelijke gelegenheid: bij Me Oma staat gastvrijheid altijd centraal. Wij kunnen feesten en partijen organiseren voor zo'n beetje elke gelegenheid en elk budget. Informeer naar de mogelijkheden hiervoor.
         </p>
       </div>
 
@@ -2310,7 +2434,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.querySelector(".lightbox-close");
 
     document.querySelectorAll(".galerij-grid img").forEach(function (img) {
-      img.addEventListener("click", function () {
+      img.addEventListener("click", function (event) {
+        event.preventDefault();
         lightbox.style.display = "flex";
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
@@ -2327,6 +2452,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        lightbox.style.display = "none";
+      }
+    });
+
     const vandaag = new Date();
     vandaag.setHours(0, 0, 0, 0);
 
@@ -2338,6 +2469,24 @@ document.addEventListener("DOMContentLoaded", function () {
         item.style.display = "none";
       }
     });
+
+    const wedstrijdenLijst = document.getElementById("wedstrijden-lijst");
+    const geenWedstrijden = document.getElementById("geen-wedstrijden");
+
+    if (wedstrijdenLijst && geenWedstrijden) {
+      const zichtbareWedstrijden = Array.from(
+        wedstrijdenLijst.querySelectorAll(".wedstrijd-item")
+      ).filter(function (wedstrijd) {
+        return wedstrijd.style.display !== "none";
+      });
+
+      if (zichtbareWedstrijden.length > 0) {
+        zichtbareWedstrijden[0].classList.add("eerstvolgende");
+      } else {
+        wedstrijdenLijst.style.display = "none";
+        geenWedstrijden.style.display = "block";
+      }
+    }
 
     const dagen = ["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"];
     const maanden = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
