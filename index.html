@@ -1824,28 +1824,101 @@
   </section>
 
 <section id="wedstrijden" class="section">
-    <div class="container two-col">
-      <div class="soft">
-        <p class="eyebrow" style="color:#9c4f2f">Wedstrijden & feesten</p>
-        <h2>Voetbal kijken en samen genieten</h2>
+  <div class="container two-col">
 
-        <div class="wedstrijden-blok">
-          <h3>Aankomende thuiswedstrijden</h3>
-          <ul class="wedstrijden-lijst">
-            <li class="wedstrijd-item" data-date="2026-03-15">
-              <strong>Feyenoord - Excelsior</strong><br>Zondag 15 maart 2026, 14:30 uur
-            </li>
-            <li class="wedstrijd-item" data-date="2026-03-22">
-              <strong>Feyenoord - Ajax</strong><br>Zondag 22 maart 2026, 14:30 uur
-            </li>
-            <li class="wedstrijd-item" data-date="2026-04-25">
-              <strong>Feyenoord - FC Groningen</strong><br>Zaterdag 25 april 2026, 16:30 uur
-            </li>
-            <li class="wedstrijd-item" data-date="2026-05-10">
-              <strong>Feyenoord - AZ Alkmaar</strong><br>Zondag 10 mei 2026, 16:45 uur
-            </li>
-          </ul>
-        </div>
+    <div class="soft">
+      <p class="eyebrow" style="color:#9c4f2f">Wedstrijden & feesten</p>
+      <h2>Voetbal kijken en samen genieten</h2>
+
+      <div class="wedstrijden-blok">
+        <h3>Aankomende wedstrijden</h3>
+
+        <ul class="wedstrijden-lijst" id="wedstrijden-lijst">
+
+          <li class="wedstrijd-item" data-date="2026-08-02">
+            <strong>Feyenoord - Atalanta Bergamo</strong><br>
+            Zondag 2 augustus 2026, 15:00 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-08-16">
+            <strong>Feyenoord - Go Ahead Eagles</strong><br>
+            Zondag 16 augustus 2026, 14:30 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-08-30">
+            <strong>Feyenoord - ADO Den Haag</strong><br>
+            Zondag 30 augustus 2026, 14:30 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-09-20">
+            <strong>Feyenoord - FC Utrecht</strong><br>
+            Zondag 20 september 2026, 12:15 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-10-10">
+            <strong>Feyenoord - AZ</strong><br>
+            Zaterdag 10 oktober 2026, 18:45 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-10-31">
+            <strong>Feyenoord - Fortuna Sittard</strong><br>
+            Zaterdag 31 oktober 2026, 16:30 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-11-22">
+            <strong>Feyenoord - Excelsior</strong><br>
+            Zondag 22 november 2026, 14:30 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-11-29">
+            <strong>Feyenoord - Ajax</strong><br>
+            Zondag 29 november 2026, 14:30 uur
+          </li>
+
+          <li class="wedstrijd-item" data-date="2026-12-20">
+            <strong>Feyenoord - FC Twente</strong><br>
+            Zondag 20 december 2026, 14:30 uur
+          </li>
+
+        </ul>
+
+        <p id="geen-wedstrijden" style="display:none;">
+          Nieuwe wedstrijden worden binnenkort bekendgemaakt.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const wedstrijdenLijst = document.getElementById("wedstrijden-lijst");
+  const wedstrijden = document.querySelectorAll(".wedstrijd-item");
+  const geenWedstrijden = document.getElementById("geen-wedstrijden");
+
+  const vandaag = new Date();
+
+  const jaar = vandaag.getFullYear();
+  const maand = String(vandaag.getMonth() + 1).padStart(2, "0");
+  const dag = String(vandaag.getDate()).padStart(2, "0");
+
+  const datumVandaag = `${jaar}-${maand}-${dag}`;
+
+  wedstrijden.forEach(function (wedstrijd) {
+    const wedstrijddatum = wedstrijd.dataset.date;
+
+    if (wedstrijddatum < datumVandaag) {
+      wedstrijd.remove();
+    }
+  });
+
+  if (wedstrijdenLijst.children.length === 0) {
+    wedstrijdenLijst.style.display = "none";
+    geenWedstrijden.style.display = "block";
+  }
+});
+</script>
 
         <p>
           Alle wedstrijden van Feyenoord zijn te zien op groot scherm. Daarnaast is Eetcafé Me Oma ook uw adres voor feesten en partijen in een warme en gezellige setting.
