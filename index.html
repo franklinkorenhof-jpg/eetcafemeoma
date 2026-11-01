@@ -1518,6 +1518,17 @@
 
     .meeet-placeholder{width:180px;min-width:180px;height:120px;display:flex;align-items:center;justify-content:center;font-size:64px;border-radius:14px;background:#f1e2cf;}
     @media(max-width:700px){.meeet-placeholder{width:100%;min-width:0;}}
+/* Kerstavonden: behoud de feestelijke kaart zonder BBQ-label. */
+    .christmas-highlight::before{content:none;display:none;}
+    /* Lichte achtergrond en expliciete tekstkleur voorkomen overschrijven door kaartstijlen. */
+    .meeet-item .meeet-info .meeet-extra{
+      background:#fff4df;
+      color:#4b2d1e;
+      border:1px solid #d9b98e;
+      box-shadow:0 3px 10px rgba(75,45,30,.08);
+    }
+    .ticker-content{animation-duration:65s;}
+    @media(max-width:700px){.ticker-content{animation-duration:80s;}}
 </style>
  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-53EB6CBDL0"></script>
@@ -1534,7 +1545,7 @@
 
   <div class="ticker">
     <div class="ticker-content">
-      🎄 Dinsdag 22 december – Oma’s Kerstdiner – 3 gangen voor €11,95 per persoon – Maximaal 25 personen – Reserveer en betaal uiterlijk 15 december! 🎄
+      🎄 Dinsdag 22 december – Oma’s Kerstdiner – Vol-au-vent met huisgemaakte kippenragout of huisgemaakte groentensoep • Rollade met stoofpeertjes, huisgemaakte appelmoes, pommes duchesse en haricots verts • Viennetta-ijs met slagroom • Koffie of thee met iets lekkers – €11,95 per persoon – Maximaal 25 personen – Reserveer en betaal uiterlijk 15 december! 🎄
     </div>
   </div>
 
@@ -2096,7 +2107,7 @@
               <p class="meeet-extra">Ook verkrijgbaar met 5 stokjes saté voor €11,50.</p>
             </div>
           </div>
-          <div class="meeet-item bbq-highlight" data-date="2026-12-22" id="mee-eet-2026-12-22">
+          <div class="meeet-item bbq-highlight christmas-highlight" data-date="2026-12-22" id="mee-eet-2026-12-22">
             <img src="images/gerechten/2e kerst.jpg" alt="🎄 Oma’s Kerstdiner" loading="lazy">
             <div class="meeet-info">
               <div class="meeet-datum">2026-12-22</div>
@@ -2106,7 +2117,7 @@
               <p class="meeet-extra">Maximaal 25 personen. Uiterlijk 15 december reserveren en betalen.</p>
             </div>
           </div>
-          <div class="meeet-item bbq-highlight" data-date="2026-12-26" id="mee-eet-2026-12-26">
+          <div class="meeet-item bbq-highlight christmas-highlight" data-date="2026-12-26" id="mee-eet-2026-12-26">
             <img src="images/gerechten/gourmet.jpg" alt="🎄 Tweede Kerstdag: steengrillen &amp; gourmetten" loading="lazy">
             <div class="meeet-info">
               <div class="meeet-datum">2026-12-26</div>
